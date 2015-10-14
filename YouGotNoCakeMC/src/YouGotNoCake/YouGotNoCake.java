@@ -7,8 +7,12 @@ package yougotnocake;
 
 //import byui.cit260.youGotNoCake2.model.Inventory;
 
+import Model.Game;
 import Model.Player;
 import Model.Inventory;
+import Model.Location;
+import Model.Map;
+import Model.Progress;
 
 //import byui.cit260.youGotNoCake2.model.Player;
 
@@ -39,6 +43,36 @@ public class YouGotNoCake {
     
         String inventoryInfo = inventoryOne.toString();
         System.out.println(inventoryInfo);
+        
+        Progress youWin = new Progress();
+        Progress youLoose = new Progress();
+        
+        youWin.setYouWin("You Got Cake!");
+        youLoose.setYouLoose("You Got no cake!");
+        
+        String playerProgress = youWin.toString();
+        System.out.println(playerProgress);
+        
+        Map rowCount = new Map();
+        
+        rowCount.setRowCount("New Map Area!");
+        
+        String areaMap = rowCount.toString();
+        System.out.println(areaMap);
+        
+        Location currentLocation = new Location();
+        
+        currentLocation.setCurrentLocation("You are here!");
+        
+        String mapLocation = currentLocation.toString();
+        System.out.println(mapLocation);
+        
+        Game playerName = new Game();
+        
+        playerName.setPlayerName("Name Goes here");
+        
+        String newGame = playerName.toString();
+        System.out.println(newGame);
     
     }
     
