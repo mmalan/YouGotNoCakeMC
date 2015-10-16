@@ -10,7 +10,27 @@ package Control;
  * @author MattMalan and Clayton Harwood
  */
 public class InventoryControl {
-    //+calcCostOfItems(): double
-    //+calcItemToPounds(): double
-    //+calcWeightOfCart(): double
+    /**+calcItemToPounds(numItems, convFactor): double
+    BEGIN
+        
+        IF (numOfItems <0)THEN
+         RETURN -1
+         
+        IF (convFactor <0)THEN
+         RETURN -1
+        
+        * conversion to lbs
+        eggs = numOfItems * 0.22 
+        flour = numOfItems * 0.275
+        sugar = numOfItems * 0.44
+        butta = numOfItems * 0.25
+        
+        
+        
+    END
+    */
+
+    //+calcCostOfItems(numItems, costConv): double
+    
+    //+calcWeightOfCart(item, totalWieght): double
 }
