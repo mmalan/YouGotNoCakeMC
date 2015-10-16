@@ -13,18 +13,30 @@ public class InventoryControl {
     /**+calcItemToPounds(numItems, convFactor): double
     BEGIN
         
-        IF (numOfItems <0)THEN
-         RETURN -1
-         
-        IF (convFactor <0)THEN
+        IF (numOfItems >0 OR numOfItems <4)THEN
          RETURN -1
         
-        * conversion to lbs
-        eggs = numOfItems * 0.22 
-        flour = numOfItems * 0.275
-        sugar = numOfItems * 0.44
-        butta = numOfItems * 0.25
+        IF (item == list[*] )THEN
+         TRUE
+        ELSE
+         RETURN -1
         
+        * list array values and their conversion factor to lbs.
+        IF (item == egg)THEN
+          itemToLbs = 0.22
+        
+        IF (item == flour)THEN
+          itemToLbs = 0.275
+        
+        IF (item == sugar)THEN
+          itemToLbs = 0.44
+        
+        IF (item == butta)THEN
+          itemToLbs = 0.25
+        
+        totalItemLbs = numOfItems * itemToLbs
+        
+        RETURN totalItemLbs
         
         
     END
