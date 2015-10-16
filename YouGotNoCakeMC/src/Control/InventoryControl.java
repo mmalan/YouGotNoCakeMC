@@ -9,6 +9,8 @@ package Control;
  *
  * @author MattMalan and Clayton Harwood
  */
-public class calcOne {
-    
+public class InventoryControl {
+    //+calcCostOfItems(): double
+    //+calcItemToPounds(): double
+    //+calcWeightOfCart(): double
 }
