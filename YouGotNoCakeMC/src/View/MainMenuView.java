@@ -5,7 +5,7 @@
  */
 package view;
 
-import Control.GameControl;
+import Control.GameControl; 
 import java.util.Scanner;
 import yougotnocake.YouGotNoCake;
 import View.GameMenuView;
@@ -100,10 +100,7 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-        //        create a new game
-        GameControl.createNewGame(YouGotNoCake.getPlayer());
-        
-//        display the game menu
+//        display help menu
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.displayMenu();
 //        System.out.println("*** displayHelpMenu function called ***");
