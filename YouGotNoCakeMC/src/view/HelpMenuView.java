@@ -81,17 +81,60 @@ public class HelpMenuView {
 
 
     private void gameObjective() {
-        System.out.println("*** gameObjective function called ***");
+        System.out.println("\n\n**************************************************");
+        
+        System.out.println("*                                                *"
+                        +"\n* You wake up to find yourself in a closet, as   *"
+                        +"\n* you look around you realize there was a        *"
+                        +"\n* birthday party. Naturally you go check to      *"
+                        +"\n* see if there is any cake left, but to your     *"
+                        +"\n* displeasure, there is none left. You wander    *"
+                        +"\n* outside to see if you can find any cake.       *"
+                        +"\n* You find none and your in a scary neighborhood *");
+                                
+        System.out.println("*                                                *"
+                        +"\n* Grab a plastic fork and a toy bat and see if   *"
+                        +"\n* you have what it takes to either find some     *"
+                        +"\n* cake or find enough ingridients to make your   *"
+                        +"\n* own, but watch out, this place seems shady!!   *");
+        
+        System.out.println("*                                                *"  
+                        +"\n* Your objective is to look everywhere and       *"
+                        +"\n* collect as much ingredients as you can before  *"
+                        +"\n* the time runs out.                             *"
+                        +"\n*                                                *"
+                        +"\n* Good luck and may you find some cake!          *");
+        
+        System.out.println("**************************************************");
     }
 
 
     private void moveInstructions() {
-        System.out.println("*** moveInstructions function called ***");
+        System.out.println("\n\n**************************************************");
+        
+        System.out.println("*                                                *"
+                        +"\n* Move by selecting the next map location        *"
+                        +"\n* you would like to try next.                    *");
+        System.out.println("*                                                *"  
+                        +"\n* Good luck and may you find some cake!          *"
+                        +"\n*                                                *");
+        
+        System.out.println("**************************************************");
     }
 
 
     private void checkInventoryInstructions() {
-        System.out.println("*** checkInventoryInstructions function called ***");
+        System.out.println("\n\n**************************************************");
+        
+        System.out.println("*                                                *"
+                        +"\n* You can check your inventory at any time by    *"
+                        +"\n* going to the main menu and selecting \"I\".     *");
+
+        System.out.println("*                                                *"  
+                        +"\n* Good luck and may you find some cake!          *"
+                        +"\n*                                                *");
+        
+        System.out.println("**************************************************");
     }
 
 }
