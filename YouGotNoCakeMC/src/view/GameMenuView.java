@@ -6,7 +6,7 @@
 package View;
 
 import java.util.Scanner;
-
+import view.InventoryMenuView;
 /**
  *
  * @author Matt
@@ -80,7 +80,8 @@ public class GameMenuView {
 
 
     private void checkPlayerInventory() {
-        System.out.println("*** checkPlayerInventory function called ***");
+        InventoryMenuView inventoryMenu = new InventoryMenuView();
+        inventoryMenu.displayInventoryMenu();
     }
 
 
