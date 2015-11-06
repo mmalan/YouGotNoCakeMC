@@ -154,103 +154,150 @@ public class MapMenuView {
         String place = "Garage";
         LocationView whatsHere= new LocationView();
         whatsHere.displayContents(place);
-        whatsHere.getPlace(place);
     }
 
     private void showFrontYard() {
-        System.out.println("*** showFrontYard function called ***");
+        String place = "Front Yard";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showBackYard() {
-        System.out.println("*** showBackYard function called ***");
+        String place = "Back Yard";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showBarbershop() {
-        System.out.println("*** showBarbershop function called ***");
+        String place = "Barbershop";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showSovietBakeshop() {
-        System.out.println("*** showSovietBakeshop function called ***");
+        String place = "Soviet Bakeshop";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showAlbertsons() {
-        System.out.println("*** showAlbertsons function called ***");
+        String place = "Albertsons";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showDrRootsDentist() {
-        System.out.println("*** showDrRootsDentist function called ***");
+        String place = "Dentists Office";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showCreepyGuys() {
-        System.out.println("*** showCreepyGuys function called ***");
+        String place = "Creepy Guys House";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showGasStation() {
-        System.out.println("*** showGasStation function called ***");
+        String place = "Gas Station";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showManhole() {
-        System.out.println("*** showManhole function called ***");
+        String place = "Man Hole";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showTreeHouse() {
-        System.out.println("*** showTreeHouse function called ***");
+        String place = "Tree House";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showOuthouse() {
-        System.out.println("*** showOuthouse function called ***");
+        String place = "Out House";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showPlayground() {
-        System.out.println("*** showPlayground function called ***");
+        String place = "Playground";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showSchool() {
-        System.out.println("*** showSchool function called ***");
+        String place = "School";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showFlorist() {
-        System.out.println("*** showFlorist function called ***");
+        String place = "Florist Shop";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showGrandmas() {
-        System.out.println("*** showGrandmas function called ***");
+        String place = "Grandmas";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showFriends() {
-        System.out.println("*** showFriends function called ***");
+        String place = "Friend House";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showMuseum() {
-        System.out.println("*** showMuseum function called ***");
+        String place = "Museum";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showLibrary() {
-        System.out.println("*** showLibrary function called ***");
+        String place = "Library";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showSkatePark() {
-        System.out.println("*** showSkatePark function called ***");
+        String place = "Skate Park";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showDarkAlley() {
-        System.out.println("*** showDarkAlley function called ***");
+        String place = "Dark Alley";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showDollarTheater() {
-        System.out.println("*** showDollarTheater function called ***");
+        String place = "Dollar Theater";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showMotel6() {
-        System.out.println("*** showMotel6 function called ***");
+        String place = "Motel 6";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showPoliceStation() {
-        System.out.println("*** showPoliceStation function called ***");
+        String place = "Police Station";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
 
     private void showBYUIpcLab() {
-        System.out.println("*** showBYUIpcLab function called ***");
+        String place = "BYU-I PC Lab";
+        LocationView whatsHere= new LocationView();
+        whatsHere.displayContents(place);
     }
     
 

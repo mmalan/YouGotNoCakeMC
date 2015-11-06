@@ -13,19 +13,12 @@ import java.util.Scanner;
  */
 public class LocationView {
     
-    public String getPlace(String place) {
-        String location = place;
-        displayContents(location);
-        return location;
-    }
-    
-    
     public String displayContents(String location) {
                         
         String input;
         do{
             System.out.println("\n\n==================================================");
-            System.out.println("\n " + location);
+            System.out.println("\n You are in the " + location + "!");
             System.out.println("\n==================================================");
             System.out.println("\n  Sugar ##  Butta ##  Flour ##  Eggs ##");
             System.out.println("\n\n==================================================");
