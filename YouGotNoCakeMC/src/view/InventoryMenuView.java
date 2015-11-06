@@ -3,27 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package view;
 
 import java.util.Scanner;
-import view.InventoryMenuView;
+
 /**
  *
- * @author Matt
+ * @author Clayton
  */
-public class GameMenuView {
-
+public class InventoryMenuView {
+    
     private final String MENU = "\n"
                 + "\n----------------------------------------------------------"
-                + "\n| Let's Get Cooking!                                     |"
+                + "\n| Inventory Menu!                                             |"
                 + "\n----------------------------------------------------------"
-                + "\nC - Check Inventory"
-                + "\nL - Look at Map"
-                + "\nB - Bake Cake"
-                + "\nM - Main Menu"
+                + "\nI - View Ingredients"
+                + "\nP - View Party Supplies"
+                + "\nG - View Gifts"
+                + "\nE - Exit"
                 + "\n----------------------------------------------------------";
 
-    public void displayMenu() {
+    public void displayInventoryMenu() {
         
         char selection = ' ';
         do{
@@ -33,7 +33,7 @@ public class GameMenuView {
             selection = input.charAt(0); // get first character of string
             
             this.doAction(selection); // do action based on selection
-        }while (selection != 'M'); // an selection is not "Main Menu"
+        }while (selection != 'E'); // an selection is not "Exit"
         
     }
     
@@ -56,20 +56,21 @@ public class GameMenuView {
         
         return entry ; //return the selection
     }
+    
    
-   public void doAction(char choice){
+    public void doAction(char choice){
        
        switch (choice){
-            case 'C': // check inventory
-               this.checkPlayerInventory();
+            case 'I': // View Ingriedents
+               this.displayIngredients();
                break;
-            case 'L': // look at map
-               this.lookPlayerMap();
+            case 'P': // View Party Supplies
+               this.partyInventory();
                break;
-            case 'B': // bake a cake
-               this.bakePlayerCake();
+            case 'G': // View Gifts
+               this.giftInventory();
                break;
-            case 'M': // return to main menu
+            case 'E': // Exit Inventory
                return;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -79,19 +80,19 @@ public class GameMenuView {
     
 
 
-    private void checkPlayerInventory() {
-        InventoryMenuView inventoryMenu = new InventoryMenuView();
-        inventoryMenu.displayInventoryMenu();
+    private void displayIngredients() {
+        BakeCakeView bakeCake= new BakeCakeView();
+        bakeCake.displayIngredients();
     }
 
 
-    private void lookPlayerMap() {
-        System.out.println("*** lookPlayerMap function called ***");
+    private void partyInventory() {
+        System.out.println("*** partyInventory function called ***");
     }
 
 
-    private void bakePlayerCake() {
-        System.out.println("*** bakePlayerCake function called ***");
+    private void giftInventory() {
+        System.out.println("*** giftInventory function called ***");
     }
 
 }
