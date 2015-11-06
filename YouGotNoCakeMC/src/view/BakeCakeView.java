@@ -27,11 +27,11 @@ public class BakeCakeView {
     
      public void displayIngredients() {
                 
-        String input = null;
+        String input;
         do{
             System.out.println(MENU); // display the main menu
             
-            input = this.getCake(); // get the user's selection
+            input=this.getCake(); // get the user's selection
             //String answer = input.(yes); // get first character of string
             
             this.bakeCake(input); // do action based on selection
@@ -65,7 +65,7 @@ public class BakeCakeView {
    
    public void bakeCake(String input){
        
-        if(input == "yes"){
+        if(input.equals("yes")){
             System.out.println("Sweet, you have made a cake and the sugar is rushing to your head!");
         }else{
             System.out.println("You do not have enough ingredients yet");
