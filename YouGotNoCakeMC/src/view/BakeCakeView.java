@@ -35,7 +35,7 @@ public class BakeCakeView {
             //String answer = input.(yes); // get first character of string
             
             this.bakeCake(input); // do action based on selection
-        }while (input != "back"); // an selection is not "Exit"
+        }while (!input.equals("back")); // an selection is not "Exit"
     }
     
     public String getCake() {
@@ -54,7 +54,7 @@ public class BakeCakeView {
             entry = entry.toLowerCase();
             
             if (entry.length() < 2){
-                System.out.println("Invalid name - enter yes or no");
+                System.out.println("Invalid entry - enter yes, no or back");
                 continue; //and repeat again
             }
             break; 
