@@ -8,16 +8,18 @@ package view;
 import Control.GameControl; 
 import java.util.Scanner;
 import yougotnocake.YouGotNoCake;
-import View.GameMenuView;
-import View.HelpMenuView;
+import view.GameMenuView;
+import view.HelpMenuView;
+import view.View;
 
 /**
  *
- * @author Clayton
+ * @author Clayton H. & Matt M.
  */
-public class MainMenuView {
+public class MainMenuView extends View {
     
-    private final String MENU = "\n"
+    public MainMenuView() {
+            super("\n"
                 + "\n----------------------------------------------------------"
                 + "\n| Main Menu                                              |"
                 + "\n----------------------------------------------------------"
@@ -26,43 +28,16 @@ public class MainMenuView {
                 + "\nH - Get help on how to play the game"
                 + "\nS - Save Game"
                 + "\nE - Exit Game"
-                + "\n----------------------------------------------------------";
-
-    public void displayMenu() {
-        //System.out.println("*** MainMenuView.displayMenu() function called ***");
-        
-        char selection = ' ';
-        do{
-            System.out.println(MENU); // display the main menu
-            
-            String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0); // get first character of string
-            
-            this.doAction(selection); // do action based on selection
-        }while (selection != 'E'); // an selection is not "Exit"
+                + "\n----------------------------------------------------------");
     }
     
-   public String getInput() {
-        boolean valid = false; //indicates if the name has been retrieved
-        String entry = null;
-        Scanner keyboard = new Scanner(System.in); //keyboard input stream
+    @Override
+    public boolean doAction(Object obj){
         
-        while(!valid) { //while a valid name has not been retrieved
-            
-            //prompt for menu selection
-            System.out.println("Enter your menu option:");
-            
-            //get selection from the keyboard and trim off the blanks
-            entry = keyboard.nextLine();
-            entry = entry.trim();
-            
-            break; // out of the (exit) the repetition
-        }
+        String value = (String) obj;
         
-        return entry ; //return the selection
-    }
-   
-   public void doAction(char choice){
+        value = value.toUpperCase();
+        char choice = value.charAt(0);
        
        switch (choice){
             case 'N': // create and start a new game
@@ -78,11 +53,12 @@ public class MainMenuView {
                this.saveGame();
                break;
             case 'E': // Exit the program
-               return;
+               return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
        }
+       return true;
    }
 
     private void startNewGame() {
