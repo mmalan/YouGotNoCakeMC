@@ -7,6 +7,7 @@ package View;
 
 import java.util.Scanner;
 import view.InventoryMenuView;
+import view.MapMenuView;
 /**
  *
  * @author Matt
@@ -86,7 +87,8 @@ public class GameMenuView {
 
 
     private void lookPlayerMap() {
-        System.out.println("*** lookPlayerMap function called ***");
+        MapMenuView mapMenu = new MapMenuView();
+        mapMenu.viewPlayerMap();
     }
 
 
