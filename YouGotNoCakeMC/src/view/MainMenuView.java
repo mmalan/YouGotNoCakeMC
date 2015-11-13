@@ -58,7 +58,7 @@ public class MainMenuView extends View {
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
        }
-       return true;
+       return false;
    }
 
     private void startNewGame() {
@@ -67,7 +67,7 @@ public class MainMenuView extends View {
         
 //        display the game menu
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
 //        System.out.println("*** startNewGame function called ***");
     }
 
@@ -78,7 +78,7 @@ public class MainMenuView extends View {
     private void displayHelpMenu() {
 //        display help menu
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+        helpMenu.display();
 //        System.out.println("*** displayHelpMenu function called ***");
     }
 

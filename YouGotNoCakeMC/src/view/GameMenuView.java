@@ -8,13 +8,15 @@ package view;
 import java.util.Scanner;
 import view.InventoryMenuView;
 import view.MapMenuView;
+import view.View;
 /**
  *
  * @author Matt
  */
-public class GameMenuView {
+public class GameMenuView extends View {
 
-    private final String MENU = "\n"
+    public GameMenuView() {
+            super("\n"
                 + "\n----------------------------------------------------------"
                 + "\n| Let's Get Cooking!                                     |"
                 + "\n----------------------------------------------------------"
@@ -22,44 +24,18 @@ public class GameMenuView {
                 + "\nL - Look at Map"
                 + "\nB - Bake Cake"
                 + "\nM - Main Menu"
-                + "\n----------------------------------------------------------";
+                + "\n----------------------------------------------------------");
+    }
 
-    public void displayMenu() {
+      
+   @Override
+    public boolean doAction(Object obj){
         
-        char selection = ' ';
-        do{
-            System.out.println(MENU); // display the main menu
-            
-            String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0); // get first character of string
-            
-            this.doAction(selection); // do action based on selection
-        }while (selection != 'M'); // an selection is not "Main Menu"
+        String value = (String) obj;
         
-    }
-    
-    public String getInput() {
-        boolean valid = false; //indicates if the name has been retrieved
-        String entry = null;
-        Scanner keyboard = new Scanner(System.in); //keyboard input stream
+        value = value.toUpperCase();
+        char choice = value.charAt(0);
         
-        while(!valid) { //while a valid name has not been retrieved
-            
-            //prompt for menu selection
-            System.out.println("What would you like to do next?:");
-            
-            //get selection from the keyboard and trim off the blanks
-            entry = keyboard.nextLine();
-            entry = entry.trim();
-            
-            break; // out of the (exit) the repetition
-        }
-        
-        return entry ; //return the selection
-    }
-   
-   public void doAction(char choice){
-       
        switch (choice){
             case 'C': // check inventory
                this.checkPlayerInventory();
@@ -71,24 +47,25 @@ public class GameMenuView {
                this.bakePlayerCake();
                break;
             case 'M': // return to main menu
-               return;
+               return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
        }
-   }
+       return false;  
+    }
     
 
 
     private void checkPlayerInventory() {
         InventoryMenuView inventoryMenu = new InventoryMenuView();
-        inventoryMenu.displayInventoryMenu();
+        inventoryMenu.display();
     }
 
 
     private void lookPlayerMap() {
         MapMenuView mapMenu = new MapMenuView();
-        mapMenu.viewPlayerMap();
+        mapMenu.display();
     }
 
 
