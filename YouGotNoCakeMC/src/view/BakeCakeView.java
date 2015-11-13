@@ -17,11 +17,10 @@ public class BakeCakeView {
                 + "\n----------------------------------------------------------"
                 + "\n| Cake Ingredients                                       |"
                 + "\n----------------------------------------------------------"
-                + "\nSugar" //will display quantity
-                + "\nEggs" //will display quantity
-                + "\nButta" //will display quantity
-                + "\nFlour" //will display quantity
-                + "\nback" //will take you back to inventory menu
+                + "\nSugar  ##" //will display quantity
+                + "\nEggs   ##" //will display quantity
+                + "\nButta  ##"//will display quantity
+                + "\nFlour  ##" //will display quantity
                 + "\n----------------------------------------------------------";
     
     
@@ -46,7 +45,8 @@ public class BakeCakeView {
         while(!valid) { //while a valid name has not been retrieved
             
             //prompt for menu selection
-            System.out.println("Would you like to bake a cake? yes or no?");
+            System.out.println("Would you like to bake a cake?");
+            System.out.println("Please enter \"yes\" \"no\" or  \"back\" ");
             
              //get selection from the keyboard and trim off the blanks
             entry = keyboard.nextLine();

@@ -7,14 +7,16 @@ package view;
 
 import java.util.Scanner;
 import view.LocationView;
+import view.View;
 
 /**
  *
  * @author Matt
  */
-public class MapMenuView {
+public class MapMenuView extends View{
 
-    private final String MENU = "\n"
+    public MapMenuView() {
+            super("\n"
                 + "\n----------------------------------------------------------"
                 + "\n|Current Location is :(StubFunction for currentPossition)!|"
                 + "\n----------------------------------------------------------"
@@ -27,43 +29,16 @@ public class MapMenuView {
                 + "\nG - Dr Root Dentist  | P - Grandmas   | Y - BYU-I Lab"
                 + "\nH - Creepy Guy House | Q - Friends    | Z - BACK-->" 
                 + "\nI - Gas Station      | R - Museum     | "
-                + "\n----------------------------------------------------------";
+                + "\n----------------------------------------------------------");
+    }
 
-    public void viewPlayerMap() {
+    @Override
+    public boolean doAction(Object obj){
         
-        char selection = ' ';
-        do{
-            System.out.println(MENU); // display the main menu
-            
-            String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0); // get first character of string
-            
-            this.doAction(selection); // do action based on selection
-        }while (selection != 'Z'); // an selection is not "Main Menu"
+        String value = (String) obj;
         
-    }
-    
-    public String getInput() {
-        boolean valid = false; //indicates if the name has been retrieved
-        String entry = null;
-        Scanner keyboard = new Scanner(System.in); //keyboard input stream
-        
-        while(!valid) { //while a valid name has not been retrieved
-            
-            //prompt for menu selection
-            System.out.println("What would you like to do next?:");
-            
-            //get selection from the keyboard and trim off the blanks
-            entry = keyboard.nextLine();
-            entry = entry.trim();
-            
-            break; // out of the (exit) the repetition
-        }
-        
-        return entry ; //return the selection
-    }
-   
-   public void doAction(char choice){
+        value = value.toUpperCase();
+        char choice = value.charAt(0);
        
        switch (choice){
             case 'A': // Garage
@@ -142,11 +117,12 @@ public class MapMenuView {
                this.showBYUIpcLab();
                break;    
             case 'Z': // return to main menu
-               return;    
+               return true;    
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
        }
+       return false;
    }
 
     private void showGarage() {
