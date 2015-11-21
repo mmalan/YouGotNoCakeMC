@@ -5,9 +5,10 @@
  */
 package Model;
 
+import Control.GameControl;
 import java.io.Serializable;
 import java.util.Objects;
-
+import Model.InventoryItem;
 /**
  *
  * @author Clayton
@@ -15,6 +16,9 @@ import java.util.Objects;
 public class Game implements Serializable{
      private String totalTime;
      private String playerName;
+     private InventoryItem[] inventory;
+     private Map map;
+     //private Cart cart;
 
     public Game() {
     }     
@@ -34,7 +38,11 @@ public class Game implements Serializable{
     public void setPlayerName(String playerName) {
         this.playerName = playerName;
     }
-
+    
+    public void setPlayer(Player player) {
+        System.out.println("setplayer function called");
+    }
+    
     @Override
     public String toString() {
         return "Game{" + "totalTime=" + totalTime + ", playerName=" + playerName + '}';
@@ -65,9 +73,13 @@ public class Game implements Serializable{
         }
         return true;
     }
-    
-    
-     
-     
-    
+
+    public void setMap(Map map) {
+        System.out.println("setMap function called");
+    }
+
+    public void setInventory(InventoryItem[] inventoryList) {
+        System.out.println("setInventory function called");
+    }
+
 }

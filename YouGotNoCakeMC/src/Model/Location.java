@@ -14,17 +14,17 @@ import java.util.Objects;
  */
 public class Location implements Serializable {
     //class instance vaiables
-    private String visited;
+    private boolean visited;
     private String currentLocation;
 
     public Location() {
     }    
 
-    public String getVisited() {
+    public boolean getVisited() {
         return visited;
     }
 
-    public void setVisited(String visited) {
+    public void setVisited(boolean visited) {
         this.visited = visited;
     }
 
@@ -65,6 +65,14 @@ public class Location implements Serializable {
             return false;
         }
         return true;
+    }
+
+    void setColumn(int column) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void setRow(int row) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

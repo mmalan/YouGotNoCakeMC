@@ -5,7 +5,11 @@
  */
 package Control;
 
+import Model.Game;
+import Model.Map;
 import Model.Player;
+import yougotnocake.YouGotNoCake;
+import Model.InventoryItem;
 
 /**
  *
@@ -14,8 +18,46 @@ import Model.Player;
 public class GameControl {
 
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame stub function called ***");
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        Game game = new Game(); //create new game
+        YouGotNoCake.setCurrentGame(game); //save in YouGotNoCake
+        
+        game.setPlayer(player); //save player in game
+        
+        //create the inventory list and save in the game
+        InventoryItem[] inventoryList = GameControl.createInventoryList();
+        game.setInventory(inventoryList);
+        
+        /**Cart cart = new Cart();
+        game.setCart(cart);*/
+        
+        Map map = MapControl.createMap(); // create and intialize new map
+        game.setMap(map); //save map in game
+        
+        //MapControl.movePlayerToStartingLocation(map);
+        
     }
     
+    public static void startNewGame(){
+        System.out.println("\n*** startNewGame stub function called ***");
+    }
+ 
+
+    private static class MapControl {
+
+        private static Map createMap() {
+            System.out.println("createMap function called");
+            return null;
+        }
+
+        public MapControl() {
+        }
+    }
+
+    public static InventoryItem[] createInventoryList(){
+        System.out.println("*** createInventoryList() in Game Control");
+        return null;
+    }
+
+      
 }

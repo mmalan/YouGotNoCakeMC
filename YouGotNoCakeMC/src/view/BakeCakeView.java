@@ -6,6 +6,7 @@
 package view;
 
 import java.util.Scanner;
+import Control.IngredientControl;
 
 /**
  *
@@ -17,14 +18,15 @@ public class BakeCakeView {
                 + "\n----------------------------------------------------------"
                 + "\n| Cake Ingredients                                       |"
                 + "\n----------------------------------------------------------"
-                + "\nSugar  ##" //will display quantity
-                + "\nEggs   ##" //will display quantity
-                + "\nButta  ##"//will display quantity
-                + "\nFlour  ##" //will display quantity
+                + "\nItem    Weight                                            "
+                + "\n----------------------------------------------------------"
+                + "\nSugar- "  + IngredientControl.Ingredients.sugar.getIngredients() + "" //will display quantity
+                + "\nEggs-  "  + IngredientControl.Ingredients.eggs.getIngredients() + ""//will display quantity
+                + "\nButta- "  + IngredientControl.Ingredients.butta.getIngredients() + ""//will display quantity
+                + "\nFlour- "  + IngredientControl.Ingredients.flour.getIngredients() + "" //will display quantity
                 + "\n----------------------------------------------------------";
     
-    
-     public void displayIngredients() {
+    public void displayIngredients() {
                 
         String input;
         do{
