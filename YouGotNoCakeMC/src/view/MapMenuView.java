@@ -8,6 +8,7 @@ package view;
 import java.util.Scanner;
 import view.LocationView;
 import view.View;
+import Model.Map;
 
 /**
  *
@@ -29,9 +30,16 @@ public class MapMenuView extends View{
                 + "\nG - Dr Root Dentist  | P - Grandmas   | Y - BYU-I Lab"
                 + "\nH - Creepy Guy House | Q - Friends    | Z - BACK-->" 
                 + "\nI - Gas Station      | R - Museum     | "
-                + "\n----------------------------------------------------------");
+                + "\n----------------------------------------------------------"
+            
+                + "\n " + Map.createMap() + ""
+            );
+            
+            
     }
 
+        
+    
     @Override
     public boolean doAction(Object obj){
         
@@ -44,11 +52,11 @@ public class MapMenuView extends View{
             case 'A': // Garage
                this.showGarage();
                break;
-            case 'B': // Front Yard
-               this.showFrontYard();
-               break;
-            case 'C': // Back Yard
+            case 'B': // Back Yard
                this.showBackYard();
+               break;
+            case 'C': // Front Yard
+               this.showFrontYard();
                break;
             case 'D': // Barbershop
                this.showBarbershop();

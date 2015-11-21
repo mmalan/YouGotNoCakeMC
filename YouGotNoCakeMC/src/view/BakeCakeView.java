@@ -18,12 +18,12 @@ public class BakeCakeView {
                 + "\n----------------------------------------------------------"
                 + "\n| Cake Ingredients                                       |"
                 + "\n----------------------------------------------------------"
-                + "\nItem    Weight                                            "
+                + "\nItem    Weight    Cost                                           "
                 + "\n----------------------------------------------------------"
-                + "\nSugar- "  + IngredientControl.Ingredients.sugar.getIngredients() + "" //will display quantity
-                + "\nEggs-  "  + IngredientControl.Ingredients.eggs.getIngredients() + ""//will display quantity
-                + "\nButta- "  + IngredientControl.Ingredients.butta.getIngredients() + ""//will display quantity
-                + "\nFlour- "  + IngredientControl.Ingredients.flour.getIngredients() + "" //will display quantity
+                + "\nSugar -  "  + IngredientControl.Ingredients.sugar.weight + "     " + IngredientControl.Ingredients.sugar.cost + "" //will display quantity
+                + "\nEggs -   "  + IngredientControl.Ingredients.eggs.weight + "     " + IngredientControl.Ingredients.eggs.cost + ""//will display quantity
+                + "\nButta -  "  + IngredientControl.Ingredients.butta.weight + "     " + IngredientControl.Ingredients.butta.cost + ""//will display quantity
+                + "\nFlour -  "  + IngredientControl.Ingredients.flour.weight + "     " + IngredientControl.Ingredients.flour.cost + "" //will display quantity
                 + "\n----------------------------------------------------------";
     
     public void displayIngredients() {

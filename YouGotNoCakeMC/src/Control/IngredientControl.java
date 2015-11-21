@@ -10,22 +10,30 @@ package Control;
  * @author Clayton
  */
 public class IngredientControl {
-    
-    public enum Ingredients{
-      eggs(0.22),
-      flour(0.27),
-      sugar(0.44),
-      butta(0.25);
-      
-      private final double amount;
-      
-      Ingredients(double amount) {
-        this.amount = amount;  
-      }
-      
-      public double getIngredients(){
-          return this.amount;
-      }
+
+    public enum Ingredients {
+
+        eggs("0.22",  "0.55"),
+        sugar("0.44",  "0.56"),
+        flour("0.27",  "0.57"),
+        butta("0.25",  "0.58");
+
+        public final String weight;
+        public final String cost;
+
+        private Ingredients(String weight, String cost) {
+            this.weight = weight;
+            this.cost = cost;
+        }
+
+        public String getWeight() {
+            return weight;
+        }
+
+        public String getCost() {
+            return cost;
+        }
+
+
     }
-    
 }

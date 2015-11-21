@@ -7,8 +7,10 @@ package Control;
 
 /**
  *
- * @author Clayton
+ * @author Clayton H. & Matt M.
  */
 public class MapControl {
+    
+    
     
 }

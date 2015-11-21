@@ -78,7 +78,7 @@ public class Map implements Serializable{
 
     @Override
     public String toString() {
-        return "Map{" + "rowCount=" + noOfRows + ", columnCount=" + noOfColumns + '}';
+        return "MapView{" + "rowCount=" + noOfRows + ", columnCount=" + noOfColumns + '}';
     }
 
     @Override

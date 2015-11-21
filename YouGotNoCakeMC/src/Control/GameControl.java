@@ -49,10 +49,7 @@ public class GameControl {
             System.out.println("createMap function called");
             return null;
         }
-
-        public MapControl() {
-        }
-    }
+}
 
     public static InventoryItem[] createInventoryList(){
         System.out.println("*** createInventoryList() in Game Control");

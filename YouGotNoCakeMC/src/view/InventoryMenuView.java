@@ -42,7 +42,7 @@ public class InventoryMenuView extends View {
                this.partyInventory();
                break;
             case 'G': // View Gifts
-               this.giftInventory();
+               this.displayGifts();
                break;
             case 'E': // Exit Inventory
                return true;
@@ -56,7 +56,7 @@ public class InventoryMenuView extends View {
 
 
     private void displayIngredients() {
-        BakeCakeView bakeCake= new BakeCakeView();
+        BakeCakeView bakeCake = new BakeCakeView();
         bakeCake.displayIngredients();
     }
 
@@ -66,8 +66,9 @@ public class InventoryMenuView extends View {
     }
 
 
-    private void giftInventory() {
-        System.out.println("*** giftInventory function called ***");
+    private void displayGifts() {
+        PartyGiftsView partyGifts = new PartyGiftsView();
+        partyGifts.displayGifts();
     }
 
 }

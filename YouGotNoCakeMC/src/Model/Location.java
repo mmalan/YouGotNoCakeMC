@@ -68,11 +68,11 @@ public class Location implements Serializable {
     }
 
     void setColumn(int column) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("setColumn " + column + "");
     }
 
     void setRow(int row) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("setRow " + row + "");
     }
     
     
