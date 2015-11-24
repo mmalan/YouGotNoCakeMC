@@ -12,21 +12,21 @@ import java.util.Objects;
  *
  * @author MattMalan
  */
-public class Inventory implements Serializable{
+public class InventoryItem implements Serializable{
     
     // class instance variables
     private String item;
     private String type;
     private String attribute;
 
-    public Inventory() {
+    public InventoryItem() {
     }
      
     public String getItem() {
         return item;
     }
 
-    public void setItem(String item) {
+    public void setInventoryItem(String item) {
         this.item = item;
     }
 
@@ -69,7 +69,7 @@ public class Inventory implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Inventory other = (Inventory) obj;
+        final InventoryItem other = (InventoryItem) obj;
         if (!Objects.equals(this.item, other.item)) {
             return false;
         }

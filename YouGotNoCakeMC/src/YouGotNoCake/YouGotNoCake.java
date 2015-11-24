@@ -8,7 +8,7 @@ package yougotnocake;
 import Control.ProgramControl;
 import Model.Game;
 import Model.Player;
-import Model.Inventory;
+import Model.InventoryItem;
 import Model.Location;
 import Model.Map;
 import Model.Progress;

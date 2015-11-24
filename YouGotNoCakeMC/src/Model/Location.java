@@ -14,17 +14,17 @@ import java.util.Objects;
  */
 public class Location implements Serializable {
     //class instance vaiables
-    private String visited;
+    private boolean visited;
     private String currentLocation;
 
     public Location() {
     }    
 
-    public String getVisited() {
+    public boolean getVisited() {
         return visited;
     }
 
-    public void setVisited(String visited) {
+    public void setVisited(boolean visited) {
         this.visited = visited;
     }
 
@@ -65,6 +65,14 @@ public class Location implements Serializable {
             return false;
         }
         return true;
+    }
+
+    void setColumn(int column) {
+        System.out.println("setColumn " + column + "");
+    }
+
+    void setRow(int row) {
+        System.out.println("setRow " + row + "");
     }
     
     
