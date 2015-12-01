@@ -25,8 +25,12 @@ public class GameControl {
         game.setPlayer(player); //save player in game
         
         //create the inventory list and save in the game
-        InventoryItem[] inventoryList = GameControl.createInventoryList();
-        game.setInventory(inventoryList);
+//        InventoryItem[] inventoryList = InventoryControl.createIngredientsList();
+//        game.setInventory(inventoryList);
+        game.setGift(InventoryControl.createGiftList());
+        game.setIngredients(InventoryControl.createIngredientsList());
+        game.setPartySupplies(InventoryControl.createPartyList());
+        
         
         /**Cart cart = new Cart();
         game.setCart(cart);*/
@@ -50,11 +54,12 @@ public class GameControl {
             return null;
         }
 }
+    
 
-    public static InventoryItem[] createInventoryList(){
-        System.out.println("*** createInventoryList() in Game Control");
-        return null;
-    }
+//    public static InventoryItem[] createInventoryList(){
+//        System.out.println("*** createInventoryList() in Game Control");
+//        return null;
+//    }
 
       
 }

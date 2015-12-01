@@ -7,6 +7,10 @@ package view;
 
 import java.util.Scanner;
 import Control.IngredientControl;
+import Control.InventoryControl;
+import Model.Item;
+import yougotnocake.YouGotNoCake;
+import Model.Game;
 
 /**
  *
@@ -26,11 +30,29 @@ public class BakeCakeView {
                 + "\nFlour -  "  + IngredientControl.Ingredients.flour.weight + "     " + IngredientControl.Ingredients.flour.cost + "" //will display quantity
                 + "\n----------------------------------------------------------";
     
+    private String menuString(){
+        
+         Game game = YouGotNoCake.getCurrentGame();
+        
+        
+         return "\n"
+                + "\n----------------------------------------------------------"
+                + "\n| Cake Ingredients                                       |"
+                + "\n----------------------------------------------------------"
+                + "\nItem    Quantity   Weight    Cost                                           "
+                + "\n----------------------------------------------------------"
+                + "\nSugar -  "  + InventoryControl.getItem(game.getIngredients(), "egg").getItemQuantity() + " " + InventoryControl.getItem(game.getIngredients(), "egg").getItemName() + " " //will display quantity
+                + "\nEggs -   "  + InventoryControl.getItem(game.getIngredients(), "sugar").getItemQuantity() + " " //will display quantity
+                + "\nButta -  " + InventoryControl.getItem(game.getIngredients(), "sugar").getItemQuantity() + " " //will display quantity
+                + "\nFlour -  " + InventoryControl.getItem(game.getIngredients(), "sugar").getItemQuantity() + " " //will display quantity 
+                + "\n----------------------------------------------------------";
+        
+    }
     public void displayIngredients() {
                 
         String input;
         do{
-            System.out.println(MENU); // display the main menu
+            System.out.println(menuString()); // display the main menu
             
             input=this.getCake(); // get the user's selection
             //String answer = input.(yes); // get first character of string

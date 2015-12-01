@@ -9,15 +9,45 @@ import Control.GameControl;
 import java.io.Serializable;
 import java.util.Objects;
 import Model.InventoryItem;
+import java.util.ArrayList;
 /**
  *
  * @author Clayton
  */
 public class Game implements Serializable{
      private String totalTime;
+     private Player player;
      private String playerName;
-     private InventoryItem[] inventory;
+     private ArrayList<Item> ingredients;
+     private ArrayList<Item> gift;
+     private ArrayList<Item> partySupplies;
      private Map map;
+
+    public void setIngredients(ArrayList<Item> ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public void setGift(ArrayList<Item> gift) {
+        this.gift = gift;
+    }
+
+    public void setPartySupplies(ArrayList<Item> partySupplies) {
+        this.partySupplies = partySupplies;
+    }
+
+
+    public ArrayList<Item> getIngredients() {
+        return ingredients;
+    }
+
+    public ArrayList<Item> getGift() {
+        return gift;
+    }
+
+    public ArrayList<Item> getPartySupplies() {
+        return partySupplies;
+    }
+   
      //private Cart cart;
 
     public Game() {
@@ -32,15 +62,15 @@ public class Game implements Serializable{
     }
 
     public String getPlayerName() {
-        return playerName;
+        return this.player.getName();
     }
 
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
+//    public void setPlayerName(String playerName) {
+//        this.playerName = playerName;
+//    }
     
     public void setPlayer(Player player) {
-        System.out.println("setplayer function called");
+        this.player = player;
     }
     
     @Override
