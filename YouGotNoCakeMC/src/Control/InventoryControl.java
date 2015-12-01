@@ -16,10 +16,10 @@ public class InventoryControl {
     public static ArrayList<Item> createIngredientsList() {
         
         ArrayList<Item> ingr = new ArrayList<>();
-        ingr.add(new Item("egg",0,1.1,2.2));
-        ingr.add(new Item("butta",0,3.3,4.4));
-        ingr.add(new Item("flour",0));
-        ingr.add(new Item("sugar",0));
+        ingr.add(new Item("eggs",1,0.22,0.50));
+        ingr.add(new Item("butta",2,0.75,1.00));
+        ingr.add(new Item("flour",3,1.50,2.00));
+        ingr.add(new Item("sugar",4,5.0,5.00));
         
         return ingr;
         }
@@ -27,10 +27,10 @@ public class InventoryControl {
     public static ArrayList<Item> createGiftList() {
         
         ArrayList<Item> gift = new ArrayList<>();
-        gift.add(new Item("stuffed unicorn",0));
-        gift.add(new Item("baseball bat",0));
-        gift.add(new Item("whoopie cushion",0));
-        gift.add(new Item("pokiemon cards",0));
+        gift.add(new Item("stuffed unicorn",0,0.0,0.0));
+        gift.add(new Item("baseball bat",0,0.0,0.0));
+        gift.add(new Item("whoopie cushion",0,0.0,0.0));
+        gift.add(new Item("pokiemon cards",0,0.0,0.0));
         
         return gift;
         }
@@ -38,10 +38,10 @@ public class InventoryControl {
     public static ArrayList<Item> createPartyList() {
         
         ArrayList<Item> party = new ArrayList<>();
-        party.add(new Item("piniata",0));
-        party.add(new Item("party hats",0));
-        party.add(new Item("plastic forks",0));
-        party.add(new Item("ice cream",0));
+        party.add(new Item("piniata",0,0.0,0.0));
+        party.add(new Item("party hats",0,0.0,0.0));
+        party.add(new Item("plastic forks",0,0.0,0.0));
+        party.add(new Item("ice cream",0,0.0,0.0));
         
         return party;
     }

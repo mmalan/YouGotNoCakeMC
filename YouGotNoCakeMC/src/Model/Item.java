@@ -31,6 +31,22 @@ public class Item implements Serializable{
         this.itemWeight = weight;
         this.itemCost = cost;        
     }
+
+    public double getItemWeight() {
+        return itemWeight;
+    }
+
+    public void setItemWeight(double itemWeight) {
+        this.itemWeight = itemWeight;
+    }
+
+    public double getItemCost() {
+        return itemCost;
+    }
+
+    public void setItemCost(double itemCost) {
+        this.itemCost = itemCost;
+    }
     
     public String getItemName() {
         return itemName;
