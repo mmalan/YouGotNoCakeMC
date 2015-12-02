@@ -70,7 +70,8 @@ public class GameMenuView extends View {
 
 
     private void bakePlayerCake() {
-        System.out.println("*** bakePlayerCake function called ***");
+        CakeIngredientView cakeMenu = new CakeIngredientView();
+        cakeMenu.displayIngredients();
     }
 
 }

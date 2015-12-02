@@ -5,9 +5,6 @@
  */
 package view;
 
-import java.util.Scanner;
-import view.LocationView;
-import view.View;
 import Model.Map;
 
 /**

@@ -22,11 +22,12 @@ public class StartProgramView {
         // Display the banner screen
         this.displayBanner();
         
-        // Prompt the player to enter their name Retrieve the name of the player
+        // Prompt the player to enter their name and age
         String playersName = this.getPlayersName();
+        int playersAge = this.getPlayersAge();
         
         // Create and save the player object
-        Player player = ProgramControl.createPlayer(playersName);
+        Player player = ProgramControl.createPlayer(playersName, playersAge);
         
         // Display a personalized welcome message
         this.displayWelcomeMessage(player);
@@ -86,6 +87,33 @@ public class StartProgramView {
         }
         
         return playersName; //return the name
+    }
+    
+    public int getPlayersAge() {
+        boolean valid = false; //indicates if the name has been retrieved
+        int playersAge = 0;
+        Scanner keyboard = new Scanner(System.in); //keyboard input stream
+        
+        while(!valid) { //while a valid name has not been retrieved
+            
+            //prompt for the player's name
+            System.out.println("Enter the player's Age:");
+            
+            //get the name from the keyboard and trim off the blanks
+            String playersAgeStr = keyboard.nextLine();
+            playersAgeStr = playersAgeStr.trim();
+            
+            try{
+                playersAge = Integer.parseInt(playersAgeStr);
+            }catch(NumberFormatException nf){
+                System.out.println("Age must be an integer");
+                continue;//repeat again
+            }
+            
+           break; // out of the (exit) the repetition
+        }
+        
+        return playersAge; //return the name
     }
     
     public void displayWelcomeMessage(Player player) {

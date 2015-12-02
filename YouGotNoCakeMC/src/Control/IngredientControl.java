@@ -5,35 +5,88 @@
  */
 package Control;
 
+import Exceptions.IngredientControlException;
+import java.util.ArrayList;
+
 /**
  *
  * @author Clayton
  */
 public class IngredientControl {
 
-    public enum Ingredients {
+    public enum Ingredient {
 
-        eggs("0.22",  "0.55"),
-        sugar("0.44",  "0.56"),
-        flour("0.27",  "0.57"),
-        butta("0.25",  "0.58");
+        eggs("eggs", 1,  0.55f),
+        sugar("sugar", 2,  0.56f),
+        flour("flour", 3,  0.57f),
+        butta("butta", 4,  0.58f);
 
-        public final String weight;
-        public final String cost;
+        public final String name;
+        public final int weight;
+        public final float cost;
 
-        private Ingredients(String weight, String cost) {
+        private Ingredient(String name, int weight, float cost) {
+            this.name = name;
             this.weight = weight;
             this.cost = cost;
         }
+        
+        public String getName() {
+            return name;
+        }
 
-        public String getWeight() {
+        public int getWeight() {
             return weight;
         }
 
-        public String getCost() {
+        public float getCost() {
             return cost;
         }
 
 
+    }
+    
+    ArrayList<Ingredient> myIngredients;
+
+    public IngredientControl() {
+        myIngredients = new ArrayList<Ingredient>();
+    }
+    
+    public int getTotalWeight() {
+        int totalWeight = 0;
+        for(Ingredient i : myIngredients ){
+            totalWeight += i.getWeight();
+        }  
+        return totalWeight;
+    }
+    
+    public float getTotalCost() {
+        float totalCost = 0;
+        for(Ingredient i : myIngredients ){
+            totalCost += i.getCost();
+        }  
+        return totalCost;
+    }
+    
+    public int getNumOf(String name)
+        throws IngredientControlException  {
+
+        int num = 0;
+        if (name == null){
+           throw new IngredientControlException("Not valid name");
+        }
+        for(Ingredient i : myIngredients ){
+            if (i.getName() == null){
+                throw new IngredientControlException("Not valid ingredient name");
+            }
+            if(name == i.getName()){
+                num++;
+            }
+        }  
+        return num;
+    }
+    
+    public void addIngredient(Ingredient i){
+        myIngredients.add(i);
     }
 }
