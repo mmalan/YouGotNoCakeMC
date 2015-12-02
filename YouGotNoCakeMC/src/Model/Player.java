@@ -15,6 +15,7 @@ import java.util.Objects;
 public class Player implements Serializable{
     //class instance vaiables
     private String name;
+    private int age;
     private double bestTime;
 
     public Player() {
@@ -26,6 +27,14 @@ public class Player implements Serializable{
 
     public void setName(String name) {
         this.name = name;
+    }
+    
+    public int getAge() {
+        return age;
+    }
+    
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public double getBestTime() {
