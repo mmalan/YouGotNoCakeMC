@@ -7,6 +7,10 @@ package view;
 
 import java.util.Scanner;
 import Control.IngredientControl;
+import Control.InventoryControl;
+import Model.Item;
+import yougotnocake.YouGotNoCake;
+import Model.Game;
 
 /**
  *
@@ -14,23 +18,29 @@ import Control.IngredientControl;
  */
 public class BakeCakeView {
     
-    private final String MENU = "\n"
+    private String menuString(){
+        
+         Game game = YouGotNoCake.getCurrentGame();
+        
+        
+         return "\n"
                 + "\n----------------------------------------------------------"
                 + "\n| Cake Ingredients                                       |"
                 + "\n----------------------------------------------------------"
-                + "\nItem    Weight    Cost                                           "
+                + "\nItem    Quantity   Weight    Cost                                           "
                 + "\n----------------------------------------------------------"
-                + "\nSugar -  "  + IngredientControl.Ingredients.sugar.weight + "     " + IngredientControl.Ingredients.sugar.cost + "" //will display quantity
-                + "\nEggs -   "  + IngredientControl.Ingredients.eggs.weight + "     " + IngredientControl.Ingredients.eggs.cost + ""//will display quantity
-                + "\nButta -  "  + IngredientControl.Ingredients.butta.weight + "     " + IngredientControl.Ingredients.butta.cost + ""//will display quantity
-                + "\nFlour -  "  + IngredientControl.Ingredients.flour.weight + "     " + IngredientControl.Ingredients.flour.cost + "" //will display quantity
+                + "\nSugar -     "  + InventoryControl.getItem(game.getIngredients(), "sugar").getItemQuantity() + "       " + InventoryControl.getItem(game.getIngredients(), "sugar").getItemWeight() + "      " + InventoryControl.getItem(game.getIngredients(), "sugar").getItemCost() + " " //will display quantity
+                + "\nEggs -      "  + InventoryControl.getItem(game.getIngredients(), "eggs").getItemQuantity() + "       " + InventoryControl.getItem(game.getIngredients(), "eggs").getItemWeight() + "     " + InventoryControl.getItem(game.getIngredients(), "eggs").getItemCost() + " " //will display quantity
+                + "\nButta -     "  + InventoryControl.getItem(game.getIngredients(), "butta").getItemQuantity() + "       " + InventoryControl.getItem(game.getIngredients(), "butta").getItemWeight() + "     " + InventoryControl.getItem(game.getIngredients(), "butta").getItemCost() + " " //will display quantity
+                + "\nFlour -     "  + InventoryControl.getItem(game.getIngredients(), "flour").getItemQuantity() + "       " + InventoryControl.getItem(game.getIngredients(), "flour").getItemWeight() + "      " + InventoryControl.getItem(game.getIngredients(), "flour").getItemCost() + " " //will display quantity
                 + "\n----------------------------------------------------------";
-    
+        
+    }
     public void displayIngredients() {
                 
         String input;
         do{
-            System.out.println(MENU); // display the main menu
+            System.out.println(menuString()); // display the main menu
             
             input=this.getCake(); // get the user's selection
             //String answer = input.(yes); // get first character of string

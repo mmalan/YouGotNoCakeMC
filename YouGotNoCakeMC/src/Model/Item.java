@@ -13,37 +13,70 @@ import java.util.Objects;
  * @author Warehouse
  */
 public class Item implements Serializable{
-    private String itemType;
-    private String itemQuantity;
+    private String itemName;
+    private int itemQuantity;
+    private double itemWeight;
+    private double itemCost;
 
-    public Item() {
+
+    public Item(String name, int quantity) {
+        this.itemName = name;
+        this.itemQuantity = quantity;
+           
     }    
-
-    public String getItemType() {
-        return itemType;
+    
+    public Item(String name, int quantity, double weight, double cost) {
+        this.itemName = name;
+        this.itemQuantity = quantity;
+        this.itemWeight = weight;
+        this.itemCost = cost;        
     }
 
-    public void setItemType(String itemType) {
-        this.itemType = itemType;
+    public double getItemWeight() {
+        return itemWeight;
     }
 
-    public String getItemQuantity() {
-        return itemQuantity;
+    public void setItemWeight(double itemWeight) {
+        this.itemWeight = itemWeight;
     }
 
-    public void setItemQuantity(String itemQuantity) {
-        this.itemQuantity = itemQuantity;
+    public double getItemCost() {
+        return itemCost;
+    }
+
+    public void setItemCost(double itemCost) {
+        this.itemCost = itemCost;
+    }
+    
+    public String getItemName() {
+        return itemName;
+    }
+    
+    public String getItemName(String newName) {
+        return (this.itemName = newName);
+    }
+
+//    public void setItemName(String itemName) {
+//        this.itemName = itemName;
+//    }
+
+    public int getItemQuantity() {
+        return this.itemQuantity;
+    }
+
+    public int setItemQuantity(int newQuantity) {
+        return (this.itemQuantity = newQuantity);
     }
 
     @Override
     public String toString() {
-        return "Item{" + "itemType=" + itemType + ", itemQuantity=" + itemQuantity + '}';
+        return String.format("%s\t%d",this.itemName, this.itemQuantity);
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 79 * hash + Objects.hashCode(this.itemType);
+        hash = 79 * hash + Objects.hashCode(this.itemName);
         hash = 79 * hash + Objects.hashCode(this.itemQuantity);
         return hash;
     }
@@ -57,7 +90,7 @@ public class Item implements Serializable{
             return false;
         }
         final Item other = (Item) obj;
-        if (!Objects.equals(this.itemType, other.itemType)) {
+        if (!Objects.equals(this.itemName, other.itemName)) {
             return false;
         }
         if (!Objects.equals(this.itemQuantity, other.itemQuantity)) {

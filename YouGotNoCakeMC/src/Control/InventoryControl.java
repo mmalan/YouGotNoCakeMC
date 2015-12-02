@@ -5,44 +5,56 @@
  */
 package Control;
 
+import java.util.ArrayList;
+import Model.Item;
 /**
  *
  * @author MattMalan and Clayton Harwood
  */
 public class InventoryControl {
-    /**+calcItemToPounds(numItems, convFactor): double
-    BEGIN
-        
-        IF (numOfItems >0 OR numOfItems <4)THEN
-         RETURN -1
-        
-        IF (item == list[*] )THEN
-         TRUE
-        ELSE
-         RETURN -1
-        
-        * list array values and their conversion factor to lbs.
-        IF (item == egg)THEN
-          itemToLbs = 0.22
-        
-        IF (item == flour)THEN
-          itemToLbs = 0.275
-        
-        IF (item == sugar)THEN
-          itemToLbs = 0.44
-        
-        IF (item == butta)THEN
-          itemToLbs = 0.25
-        
-        totalItemLbs = numOfItems * itemToLbs
-        
-        RETURN totalItemLbs
-        
-        
-    END
-    */
-
-    //+calcCostOfItems(numItems, costConv): double
     
-    //+calcWeightOfCart(item, totalWieght): double
+    public static ArrayList<Item> createIngredientsList() {
+        
+        ArrayList<Item> ingr = new ArrayList<>();
+        ingr.add(new Item("eggs",1,0.22,0.50));
+        ingr.add(new Item("butta",2,0.75,1.00));
+        ingr.add(new Item("flour",3,1.50,2.00));
+        ingr.add(new Item("sugar",4,5.0,5.00));
+        
+        return ingr;
+        }
+        
+    public static ArrayList<Item> createGiftList() {
+        
+        ArrayList<Item> gift = new ArrayList<>();
+        gift.add(new Item("stuffed unicorn",0,0.0,0.0));
+        gift.add(new Item("baseball bat",0,0.0,0.0));
+        gift.add(new Item("whoopie cushion",0,0.0,0.0));
+        gift.add(new Item("pokiemon cards",0,0.0,0.0));
+        
+        return gift;
+        }
+        
+    public static ArrayList<Item> createPartyList() {
+        
+        ArrayList<Item> party = new ArrayList<>();
+        party.add(new Item("piniata",0,0.0,0.0));
+        party.add(new Item("party hats",0,0.0,0.0));
+        party.add(new Item("plastic forks",0,0.0,0.0));
+        party.add(new Item("ice cream",0,0.0,0.0));
+        
+        return party;
+    }
+    
+    public static void DisplayList(ArrayList<Item> list) {
+        for (Item item: list)
+            System.out.println(item.getItemName());
+    }
+    
+    public static Item getItem(ArrayList<Item> list, String name) {
+        for (Item item: list)
+            if (item.getItemName().equals(name))
+                return item;
+        return null;
+    }
 }
