@@ -5,7 +5,9 @@
  */
 package view;
 
+import Exceptions.MapControlException;
 import Model.Map;
+import java.util.InputMismatchException;
 
 /**
  *
@@ -35,16 +37,46 @@ public class MapMenuView extends View{
             
     }
 
+    private char myGetChar(String val, String allwd, boolean CaseSensitive)
+             throws MapControlException {
         
+        String value = val;
+        String allowed = allwd;
+        
+        if(value == null || allowed == null){
+            throw new MapControlException("MyGetChar- null inputs");
+        }
+        if (!CaseSensitive){
+             value = value.toUpperCase();
+             allowed = allowed.toUpperCase();
+        }
+        
+        int n = allowed.length();
+        char c = value.charAt(0);
+        for(int i = 0; i < n; i++ ){
+            if( c == allowed.charAt(i)){
+                return c;
+            }
+        }
+        throw new MapControlException("MyGetChar - Didn't find it");
+        
+    }    
     
     @Override
     public boolean doAction(Object obj){
         
         String value = (String) obj;
         
-        value = value.toUpperCase();
-        char choice = value.charAt(0);
-       
+//        value = value.toUpperCase();
+//        char choice = value.charAt(0);
+        
+        char choice;
+        try{ 
+           choice = myGetChar(value, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", false);
+        }catch(MapControlException me){
+                System.out.println("Invaild Choice Please select A - Z");
+                return false;//repeat again
+        }
        switch (choice){
             case 'A': // Garage
                this.showGarage();
