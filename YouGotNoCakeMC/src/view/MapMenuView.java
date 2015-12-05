@@ -8,6 +8,7 @@ package view;
 import Exceptions.MapControlException;
 import Model.Map;
 import java.util.InputMismatchException;
+import yougotnocake.YouGotNoCake;
 
 /**
  *
@@ -16,25 +17,81 @@ import java.util.InputMismatchException;
 public class MapMenuView extends View{
 
     public MapMenuView() {
-            super("\n"
-                + "\n----------------------------------------------------------"
-                + "\n|Current Location is :(StubFunction for currentPossition)!|"
-                + "\n----------------------------------------------------------"
-                + "\nA - Garage           | J - Manhole    | S - Library"
-                + "\nB - Back Yard        | K - Treehouse  | T - Skate Park"
-                + "\nC - Front Yard       | L - Outhouse   | U - Dark Alley"
-                + "\nD - Barbershop       | M - Playground | V - Dollar Theater"
-                + "\nE - Soviet Bakeshop  | N - School     | W - Motel 6"
-                + "\nF - Albertsons       | O - Florist    | X - Police Station"
-                + "\nG - Dr Root Dentist  | P - Grandmas   | Y - BYU-I Lab"
-                + "\nH - Creepy Guy House | Q - Friends    | Z - BACK-->" 
-                + "\nI - Gas Station      | R - Museum     | "
-                + "\n----------------------------------------------------------"
+            super("");
             
-                + "\n " + Map.createMap() + ""
-            );
+//            ("\n"
+//                + "\n----------------------------------------------------------"
+//                + "\n|Current Location is :(StubFunction for currentPossition)!|"
+//                + "\n----------------------------------------------------------"
+//                + "\nA - Garage           | J - Manhole    | S - Library"
+//                + "\nB - Back Yard        | K - Treehouse  | T - Skate Park"
+//                + "\nC - Front Yard       | L - Outhouse   | U - Dark Alley"
+//                + "\nD - Barbershop       | M - Playground | V - Dollar Theater"
+//                + "\nE - Soviet Bakeshop  | N - School     | W - Motel 6"
+//                + "\nF - Albertsons       | O - Florist    | X - Police Station"
+//                + "\nG - Dr Root Dentist  | P - Grandmas   | Y - BYU-I Lab"
+//                + "\nH - Creepy Guy House | Q - Friends    | Z - BACK-->" 
+//                + "\nI - Gas Station      | R - Museum     | "
+//                + "\n----------------------------------------------------------"
+//            
+//                + "\n " + Map.createMap() + ""
+//            );
             
             
+    }
+    
+    /**
+     *
+     */
+    @Override
+    public void display(){
+        String value = "";
+        String displayMessage = "";
+        boolean done = false;
+        
+        do{
+            System.out.println(getDisplayMessage()); // display prompt message
+            value = this.getInput(); //get value end user entered
+            done = this.doAction(value); // do action based on value entered
+        }
+        while (!done);
+    }
+    
+    private String padString(String thisstring, int size) {
+        return thisstring;
+    } 
+    
+    private String getDisplayMessage() {
+        char letter = 'A';
+        String displayMessage = "";
+        Map map = yougotnocake.YouGotNoCake.getCurrentGame().getMap();
+        int rows = map.getNoOfRows();
+        int columns = map.getNoOfColumns();
+        displayMessage = "\n" 
+                + "\\n----------------------------------------------------------\"\n" 
+                + "\\n|Current Location is :" + map.getCurrentLocation() + "\n"
+                + "\\n----------------------------------------------------------\"\n";
+        for (int r=0; r < rows; r++){
+            for (int c=0; c < columns; c++){
+                String sletter = Character.toString(letter);
+                String currLocation = map.getLocation(r, c).getName();
+                if ( map.getLocation(r, c).getVisited())
+                    currLocation = "#" + currLocation;
+                if ( map.getLocation(r, c).getName() == map.getCurrentLocation())
+                    currLocation = "(" + currLocation + ")";
+                displayMessage += (sletter + " - " + padString( currLocation,17) + "|"); 
+                if (letter != 'Z')
+                    letter++;
+                else 
+                    letter = '1';
+                
+            }
+            displayMessage += ("\n");
+        }
+        displayMessage += ("----------------------------------------------------------");    
+                
+        
+        return displayMessage;
     }
 
     private char myGetChar(String val, String allwd, boolean CaseSensitive)
