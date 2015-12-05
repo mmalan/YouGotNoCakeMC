@@ -23,6 +23,8 @@ public class Game implements Serializable{
      private ArrayList<Item> partySupplies;
      private Map map;
 
+
+
     public void setIngredients(ArrayList<Item> ingredients) {
         this.ingredients = ingredients;
     }
@@ -105,7 +107,11 @@ public class Game implements Serializable{
     }
 
     public void setMap(Map map) {
-        System.out.println("setMap function called");
+        this.map = map;
+    }
+    
+    public Map getMap() {
+        return map;
     }
 
     public void setInventory(InventoryItem[] inventoryList) {

@@ -15,34 +15,25 @@ public class Map implements Serializable{
      //class instance vaiables
     private int noOfRows;
     private int noOfColumns;
+    private String currentLocation;
     private Location[][] locations;
 
-    public static Map createMap() {
-    
-        //create the map
-        Map map = new Map(5, 5);
-        
-        //create the scenes for the game
-        //Scene[] scenes = createScenes();
-        
-        //assign scenes to locations
-        //GameControl.assignScenesToLocations(map, scenes);
-        
-        return map;
-    }
-    
     public Map(){
-    }
-    
-    public Map(int noOfRows, int noOfColumns){
-        if (noOfRows < 1 || noOfColumns < 1) {
-            System.out.println("The number of rows and columns must be > zero");
-            return;
-        }
         
-        this.noOfRows = noOfRows;
-        this.noOfColumns = noOfColumns;
-        
+        currentLocation = "Home";
+        this.noOfRows = 9;
+        this.noOfColumns = 3;
+        String locationNames[][] = {
+            {"Garage", "Manhole", "Library"},
+            {"Back_Yard", "Treehouse", "Skate_Park"},
+            {"Front_Yard", "Outhouse", "Dark_Alley"},
+            {"Barbershop", "Playground", "Dollar_Theater"},
+            {"Soviet_Bakeshop", "School", "Motel_6"},
+            {"Albertsons", "Florist", "Police Station"},
+            {"Dr_Root_Dentist", "Grandmas", "BYU-I_Lab"},
+            {"Creepy_Guy_House", "Friends", "Legend..."},
+            {"Gas Station", "Museum", "X=Visited"}
+        };
         // create 2-D array for location objects
         this.locations = new Location[noOfRows][noOfColumns];
         
@@ -53,15 +44,20 @@ public class Map implements Serializable{
                 location.setColumn(column);
                 location.setRow(row);
                 location.setVisited(false);
+                location.setName(locationNames[row][column]);
                 
                 //assign the location object to the current position in array
                 locations[row][column] = location;
             }
         }
     }
+    
+    public Location getLocation(int row, int column) {
+        return this.locations[row][column];
+    }
            
     public int getNoOfRows() {
-        return noOfRows;
+        return this.noOfRows;
     }
 
     public void setNoOfRows(int noOfRows) {
@@ -76,6 +72,16 @@ public class Map implements Serializable{
         this.noOfColumns = noOfColumns;
     }
 
+    
+    public String getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(String currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+    
+    
     @Override
     public String toString() {
         return "MapView{" + "rowCount=" + noOfRows + ", columnCount=" + noOfColumns + '}';

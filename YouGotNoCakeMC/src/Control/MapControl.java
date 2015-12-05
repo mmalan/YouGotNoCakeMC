@@ -14,6 +14,11 @@ import yougotnocake.YouGotNoCake;
  */
 public class MapControl {
     
+    public static Map createMap() {
+        Map map = new Map();
+        return map;
+    }
+    
 //    Map map = YouGotNoCake.getCurrentGame().getMap();
 //        int newRow = coordinates.x-1;
 //        int newColumn = coordinates.y-1;

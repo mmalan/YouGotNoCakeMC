@@ -5,6 +5,7 @@
  */
 package view;
 
+import Control.InventoryControl;
 import java.util.Scanner;
 
 /**
@@ -61,6 +62,7 @@ public class LocationView {
    public void takeStuff(String input){
        
         if(input.equals("yes")){
+            InventoryControl.getItem(yougotnocake.YouGotNoCake.getCurrentGame().getIngredients(), "eggs").addToQuantity(2);
             System.out.println("Your items are in your basket!");
         }else{
             System.out.println("You have too much in your basket!");

@@ -15,7 +15,7 @@ import java.util.Objects;
 public class Location implements Serializable {
     //class instance vaiables
     private boolean visited;
-    private String currentLocation;
+    private String name;
 
     public Location() {
     }    
@@ -28,24 +28,24 @@ public class Location implements Serializable {
         this.visited = visited;
     }
 
-    public String getCurrentLocation() {
-        return currentLocation;
+    public String getName() {
+        return name;
     }
 
-    public void setCurrentLocation(String currentLocation) {
-        this.currentLocation = currentLocation;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
-        return "Location{" + "visited=" + visited + ", currentLocation=" + currentLocation + '}';
+        return "Location{" + "visited=" + visited + ", name=" + name + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 37 * hash + Objects.hashCode(this.visited);
-        hash = 37 * hash + Objects.hashCode(this.currentLocation);
+        hash = 37 * hash + Objects.hashCode(this.name);
         return hash;
     }
 
@@ -61,7 +61,7 @@ public class Location implements Serializable {
         if (!Objects.equals(this.visited, other.visited)) {
             return false;
         }
-        if (!Objects.equals(this.currentLocation, other.currentLocation)) {
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
         return true;

@@ -47,13 +47,13 @@ public class GameControl {
     }
  
 
-    private static class MapControl {
-
-        private static Map createMap() {
-            System.out.println("createMap function called");
-            return null;
-        }
-}
+//    private static class MapControl {
+//
+//        private static Map createMap() {
+//            System.out.println("createMap function called");
+//            return null;
+//        }
+//}
     
 
 //    public static InventoryItem[] createInventoryList(){

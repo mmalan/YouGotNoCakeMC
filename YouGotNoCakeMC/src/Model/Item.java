@@ -68,6 +68,10 @@ public class Item implements Serializable{
         return (this.itemQuantity = newQuantity);
     }
 
+    public void addToQuantity(int additionalAmount) {
+        this.itemQuantity += additionalAmount;
+    }
+    
     @Override
     public String toString() {
         return String.format("%s\t%d",this.itemName, this.itemQuantity);
