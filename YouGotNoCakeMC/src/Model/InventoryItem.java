@@ -12,8 +12,8 @@ import java.util.Objects;
  *
  * @author MattMalan
  */
-public class InventoryItem implements Serializable{
-    
+public class InventoryItem implements Serializable {
+
     // class instance variables
     private String item;
     private String type;
@@ -21,7 +21,7 @@ public class InventoryItem implements Serializable{
 
     public InventoryItem() {
     }
-     
+
     public String getItem() {
         return item;
     }
@@ -60,7 +60,6 @@ public class InventoryItem implements Serializable{
         return "Inventory{" + "item=" + item + ", type=" + type + ", attribute=" + attribute + '}';
     }
 
-        
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -81,6 +80,5 @@ public class InventoryItem implements Serializable{
         }
         return true;
     }
-    
-    
+
 }

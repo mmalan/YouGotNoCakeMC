@@ -13,13 +13,15 @@ import java.util.Objects;
  * @author Clayton
  */
 public class Progress implements Serializable {
+
     //class instance vaiables
+
     private String youWin;
     private String youLoose;
     private double calculate;
 
     public Progress() {
-    }    
+    }
 
     public String getYouWin() {
         return youWin;
@@ -78,5 +80,5 @@ public class Progress implements Serializable {
             return false;
         }
         return true;
-    }    
+    }
 }

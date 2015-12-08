@@ -16,10 +16,10 @@ public class IngredientControl {
 
     public enum Ingredient {
 
-        eggs("eggs", 1,  0.55f),
-        sugar("sugar", 2,  0.56f),
-        flour("flour", 3,  0.57f),
-        butta("butta", 4,  0.58f);
+        eggs("eggs", 1, 0.55f),
+        sugar("sugar", 2, 0.56f),
+        flour("flour", 3, 0.57f),
+        butta("butta", 4, 0.58f);
 
         public final String name;
         public final int weight;
@@ -30,7 +30,7 @@ public class IngredientControl {
             this.weight = weight;
             this.cost = cost;
         }
-        
+
         public String getName() {
             return name;
         }
@@ -43,50 +43,49 @@ public class IngredientControl {
             return cost;
         }
 
-
     }
-    
+
     ArrayList<Ingredient> myIngredients;
 
     public IngredientControl() {
         myIngredients = new ArrayList<Ingredient>();
     }
-    
+
     public int getTotalWeight() {
         int totalWeight = 0;
-        for(Ingredient i : myIngredients ){
+        for (Ingredient i : myIngredients) {
             totalWeight += i.getWeight();
-        }  
+        }
         return totalWeight;
     }
-    
+
     public float getTotalCost() {
         float totalCost = 0;
-        for(Ingredient i : myIngredients ){
+        for (Ingredient i : myIngredients) {
             totalCost += i.getCost();
-        }  
+        }
         return totalCost;
     }
-    
+
     public int getNumOf(String name)
-        throws IngredientControlException  {
+            throws IngredientControlException {
 
         int num = 0;
-        if (name == null){
-           throw new IngredientControlException("Not valid name");
+        if (name == null) {
+            throw new IngredientControlException("Not valid name");
         }
-        for(Ingredient i : myIngredients ){
-            if (i.getName() == null){
+        for (Ingredient i : myIngredients) {
+            if (i.getName() == null) {
                 throw new IngredientControlException("Not valid ingredient name");
             }
-            if(name == i.getName()){
+            if (name == i.getName()) {
                 num++;
             }
-        }  
+        }
         return num;
     }
-    
-    public void addIngredient(Ingredient i){
+
+    public void addIngredient(Ingredient i) {
         myIngredients.add(i);
     }
 }

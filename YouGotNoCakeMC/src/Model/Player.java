@@ -12,14 +12,16 @@ import java.util.Objects;
  *
  * @author Clayton H. & Matt M.
  */
-public class Player implements Serializable{
+public class Player implements Serializable {
+
     //class instance vaiables
+
     private String name;
     private int age;
     private double bestTime;
 
     public Player() {
-    }    
+    }
 
     public String getName() {
         return name;
@@ -28,11 +30,11 @@ public class Player implements Serializable{
     public void setName(String name) {
         this.name = name;
     }
-    
+
     public int getAge() {
         return age;
     }
-    
+
     public void setAge(int age) {
         this.age = age;
     }
@@ -74,6 +76,5 @@ public class Player implements Serializable{
             return false;
         }
         return true;
-    }    
+    }
 }
-

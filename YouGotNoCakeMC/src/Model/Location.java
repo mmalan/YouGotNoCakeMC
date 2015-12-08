@@ -6,19 +6,38 @@
 package Model;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  *
  * @author Clayton
  */
 public class Location implements Serializable {
+
     //class instance vaiables
+
     private boolean visited;
-    private String name;
+    private String description;
+    private int row;
+    private int column;
+    private char letter;
 
     public Location() {
-    }    
+        visited = false;
+        description = "undefined";
+        row = 0;
+        column = 0;
+        letter = '.';
+
+    }
+
+    public Location(boolean v, String d, char l, int r, int c) {
+        visited = v;
+        description = d;
+        row = r;
+        column = c;
+        letter = l;
+
+    }
 
     public boolean getVisited() {
         return visited;
@@ -28,55 +47,35 @@ public class Location implements Serializable {
         this.visited = visited;
     }
 
-    public String getName() {
-        return name;
+    public String getDescription() {
+        return description;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    @Override
-    public String toString() {
-        return "Location{" + "visited=" + visited + ", name=" + name + '}';
+    public char getLetter() {
+        return letter;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.visited);
-        hash = 37 * hash + Objects.hashCode(this.name);
-        return hash;
+    public void setLetter(char letter) {
+        this.letter = letter;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Location other = (Location) obj;
-        if (!Objects.equals(this.visited, other.visited)) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        return true;
+    public int getRow() {
+        return row;
     }
 
-    void setColumn(int column) {
-        System.out.println("setColumn " + column + "");
+    public void setRow(int row) {
+        this.row = row;
     }
 
-    void setRow(int row) {
-        System.out.println("setRow " + row + "");
+    public int getColumn() {
+        return column;
     }
-    
-    
-    
-    
-    
+
+    public void setColumn(int column) {
+        this.column = column;
+    }
 }

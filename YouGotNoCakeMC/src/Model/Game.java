@@ -6,24 +6,45 @@
 package Model;
 
 import Control.GameControl;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Objects;
-import Model.InventoryItem;
 import java.util.ArrayList;
+
 /**
  *
  * @author Clayton
  */
-public class Game implements Serializable{
-     private String totalTime;
-     private Player player;
-     private String playerName;
-     private ArrayList<Item> ingredients;
-     private ArrayList<Item> gift;
-     private ArrayList<Item> partySupplies;
-     private Map map;
+public class Game implements Serializable {
 
+    private String totalTime;
+    private Player player;
+    private String playerName;
+    private ArrayList<Item> ingredients;
+    private ArrayList<Item> gift;
+    private ArrayList<Item> partySupplies;
+    private Map map;
 
+    public static void saveGame(Game game) throws Exception {
+        FileOutputStream stream = new FileOutputStream(new File("SavedGame.dat"));
+        ObjectOutputStream objectStream = new ObjectOutputStream(stream);
+        objectStream.writeObject(game);
+        objectStream.close();
+    }
+
+    public static Game loadGame(File saveFile) throws Exception {
+        FileInputStream stream = new FileInputStream(saveFile);
+        ObjectInputStream objectStream = new ObjectInputStream(stream);
+        Game game = (Game) objectStream.readObject();
+        objectStream.close();
+        return game;
+    }
 
     public void setIngredients(ArrayList<Item> ingredients) {
         this.ingredients = ingredients;
@@ -37,7 +58,6 @@ public class Game implements Serializable{
         this.partySupplies = partySupplies;
     }
 
-
     public ArrayList<Item> getIngredients() {
         return ingredients;
     }
@@ -49,11 +69,10 @@ public class Game implements Serializable{
     public ArrayList<Item> getPartySupplies() {
         return partySupplies;
     }
-   
-     //private Cart cart;
 
+     //private Cart cart;
     public Game() {
-    }     
+    }
 
     public String getTotalTime() {
         return totalTime;
@@ -70,11 +89,10 @@ public class Game implements Serializable{
 //    public void setPlayerName(String playerName) {
 //        this.playerName = playerName;
 //    }
-    
     public void setPlayer(Player player) {
         this.player = player;
     }
-    
+
     @Override
     public String toString() {
         return "Game{" + "totalTime=" + totalTime + ", playerName=" + playerName + '}';
@@ -106,12 +124,12 @@ public class Game implements Serializable{
         return true;
     }
 
-    public void setMap(Map map) {
-        this.map = map;
-    }
-    
     public Map getMap() {
         return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
     }
 
     public void setInventory(InventoryItem[] inventoryList) {
