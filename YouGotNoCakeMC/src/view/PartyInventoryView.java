@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  *
  * @author Clayton
  */
-public class BakeCakeView {
+public class PartyInventoryView {
 
     private String menuString() {
 
@@ -28,32 +28,32 @@ public class BakeCakeView {
 
         return "\r\n"
                 + "\r\n----------------------------------------------------------"
-                + "\r\n| Cake Ingredients                                       |"
+                + "\r\n| Party Inventory                                        |"
                 + "\r\n----------------------------------------------------------"
-                + "\r\n| Item    Quantity   Weight    Cost                      |"
+                + "\r\n| Item                   Quantity   Weight    Cost       |"
                 + "\r\n----------------------------------------------------------"
-                + "\r\n| Sugar -   " + InventoryControl.getItem(game.getIngredients(), "sugar").getItemQuantity() + "        " + InventoryControl.getItem(game.getIngredients(), "sugar").getItemWeight() + "       " + InventoryControl.getItem(game.getIngredients(), "sugar").getItemCost() + "                       |" //will display quantity
-                + "\r\n| Eggs -    " + InventoryControl.getItem(game.getIngredients(), "eggs").getItemQuantity() + "        " + InventoryControl.getItem(game.getIngredients(), "eggs").getItemWeight() + "      " + InventoryControl.getItem(game.getIngredients(), "eggs").getItemCost() + "                       |" //will display quantity
-                + "\r\n| Butta -   " + InventoryControl.getItem(game.getIngredients(), "butta").getItemQuantity() + "        " + InventoryControl.getItem(game.getIngredients(), "butta").getItemWeight() + "      " + InventoryControl.getItem(game.getIngredients(), "butta").getItemCost() + "                       |" //will display quantity
-                + "\r\n| Flour -   " + InventoryControl.getItem(game.getIngredients(), "flour").getItemQuantity() + "        " + InventoryControl.getItem(game.getIngredients(), "flour").getItemWeight() + "       " + InventoryControl.getItem(game.getIngredients(), "flour").getItemCost() + "                       |" //will display quantity
+                + "\r\n| Piniata -                " + InventoryControl.getItem(game.getPartySupplies(), "piniata").getItemQuantity() + "         " + InventoryControl.getItem(game.getPartySupplies(), "piniata").getItemWeight() + "       " + InventoryControl.getItem(game.getPartySupplies(), "piniata").getItemCost() + "       |" //will display quantity
+                + "\r\n| Party Hats -             " + InventoryControl.getItem(game.getPartySupplies(), "party hats").getItemQuantity() + "         " + InventoryControl.getItem(game.getPartySupplies(), "party hats").getItemWeight() + "       " + InventoryControl.getItem(game.getPartySupplies(), "party hats").getItemCost() + "       |" //will display quantity
+                + "\r\n| Plastic Forks -          " + InventoryControl.getItem(game.getPartySupplies(), "plastic forks").getItemQuantity() + "         " + InventoryControl.getItem(game.getPartySupplies(), "plastic forks").getItemWeight() + "       " + InventoryControl.getItem(game.getPartySupplies(), "plastic forks").getItemCost() + "       |" //will display quantity
+                + "\r\n| Ice Cream -              " + InventoryControl.getItem(game.getPartySupplies(), "ice cream").getItemQuantity() + "         " + InventoryControl.getItem(game.getPartySupplies(), "ice cream").getItemWeight() + "       " + InventoryControl.getItem(game.getPartySupplies(), "ice cream").getItemCost() + "       |" //will display quantity
                 + "\r\n----------------------------------------------------------";
 
     }
 
-    public void displayIngredients() {
+    public void displayPartyStuff() {
 
         String input;
         do {
             System.out.println(menuString()); // display the main menu
 
-            input = this.getCake(); // get the user's selection
+            input = this.getParty(); // get the user's selection
             //String answer = input.(yes); // get first character of string
 
-            this.bakeCake(input); // do action based on selection
+            this.goToParty(input); // do action based on selection
         } while (!input.equals("back")); // an selection is not "Exit"
     }
 
-    public String getCake() {
+    public String getParty() {
         boolean valid = false; //indicates if the name has been retrieved
         String entry = null;
         Scanner keyboard = new Scanner(System.in); //keyboard input stream
@@ -61,7 +61,7 @@ public class BakeCakeView {
         while (!valid) { //while a valid name has not been retrieved
 
             //prompt for menu selection
-            System.out.println("Would you like to bake a cake?");
+            System.out.println("Would you like to go to the party?");
             System.out.println("Please enter \"yes\" \"no\" or  \"back\" ");
 
             //get selection from the keyboard and trim off the blanks
@@ -79,23 +79,23 @@ public class BakeCakeView {
         return entry; //return the selection
     }
 
-    public void bakeCake(String input) {
+    public void goToParty(String input) {
 
         if (input.equals("yes")) {
-            System.out.println("Sweet, you have made a cake and the sugar is rushing to your head!");
+            System.out.println("Sweet, you have gifts to go to the party! Have FUN!!!");
         } else {
-            System.out.println("You do not have enough ingredients yet");
+            System.out.println("You do not have enough gifts to go to the party yet");
         }
     }
 
-    public void saveIngredientsToFile() {
+    public void savePartyStuffToFile() {
         FileWriter outFile = null;
-        String filelocation = "Ingredients.txt";
+        String filelocation = "PartyStuff.txt";
         try {
             outFile = new FileWriter(filelocation);
             outFile.write(menuString());
             outFile.flush();
-            System.out.println("Ingredients.txt saved successfully!");
+            System.out.println("PartyStuff.txt saved successfully!");
         } catch (IOException ex) {
             System.out.println("Error Saving File.");
         } finally {
