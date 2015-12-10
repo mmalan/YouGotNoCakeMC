@@ -28,10 +28,10 @@ public class InventoryControl {
     public static ArrayList<Item> createGiftList() {
 
         ArrayList<Item> gift = new ArrayList<>();
-        gift.add(new Item("stuffed unicorn", 0, 0.0, 0.0));
-        gift.add(new Item("baseball bat", 0, 0.0, 0.0));
-        gift.add(new Item("whoopie cushion", 0, 0.0, 0.0));
-        gift.add(new Item("pokiemon cards", 0, 0.0, 0.0));
+        gift.add(new Item("stuffed unicorn", 5, 0.0, 0.0));
+        gift.add(new Item("baseball bat", 6, 0.0, 0.0));
+        gift.add(new Item("whoopie cushion", 7, 0.0, 0.0));
+        gift.add(new Item("pokiemon cards", 8, 0.0, 0.0));
 
         return gift;
     }
@@ -39,10 +39,10 @@ public class InventoryControl {
     public static ArrayList<Item> createPartyList() {
 
         ArrayList<Item> party = new ArrayList<>();
-        party.add(new Item("piniata", 0, 0.0, 0.0));
-        party.add(new Item("party hats", 0, 0.0, 0.0));
-        party.add(new Item("plastic forks", 0, 0.0, 0.0));
-        party.add(new Item("ice cream", 0, 0.0, 0.0));
+        party.add(new Item("piniata", 9, 0.0, 0.0));
+        party.add(new Item("party hats", 10, 0.0, 0.0));
+        party.add(new Item("plastic forks", 11, 0.0, 0.0));
+        party.add(new Item("ice cream", 12, 0.0, 0.0));
 
         return party;
     }
