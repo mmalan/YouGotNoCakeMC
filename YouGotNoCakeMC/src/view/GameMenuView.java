@@ -5,10 +5,6 @@
  */
 package view;
 
-import java.util.Scanner;
-import view.InventoryMenuView;
-import view.MapMenuView;
-import view.View;
 
 /**
  *
@@ -17,7 +13,7 @@ import view.View;
 public class GameMenuView extends View {
 
     public GameMenuView() {
-        super("\n"
+            super("\n"
                 + "\n----------------------------------------------------------"
                 + "\n| Let's Get Cooking!                                     |"
                 + "\n----------------------------------------------------------"
@@ -28,45 +24,50 @@ public class GameMenuView extends View {
                 + "\n----------------------------------------------------------");
     }
 
-    @Override
-    public boolean doAction(Object obj) {
-
+      
+   @Override
+    public boolean doAction(Object obj){
+        
         String value = (String) obj;
-
+        
         value = value.toUpperCase();
         char choice = value.charAt(0);
-
-        switch (choice) {
+        
+       switch (choice){
             case 'C': // check inventory
-                this.checkPlayerInventory();
-                break;
+               this.checkPlayerInventory();
+               break;
             case 'L': // look at map
-                this.lookPlayerMap();
-                break;
+               this.lookPlayerMap();
+               break;
             case 'B': // bake a cake
-                this.bakePlayerCake();
-                break;
+               this.bakePlayerCake();
+               break;
             case 'M': // return to main menu
-                return true;
+               return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
-        }
-        return false;
+       }
+       return false;  
     }
+    
+
 
     private void checkPlayerInventory() {
         InventoryMenuView inventoryMenu = new InventoryMenuView();
         inventoryMenu.display();
     }
 
+
     private void lookPlayerMap() {
         MapMenuView mapMenu = new MapMenuView();
         mapMenu.displayMap();
     }
 
+
     private void bakePlayerCake() {
-        CakeIngredientView cakeMenu = new CakeIngredientView();
+        BakeCakeView cakeMenu = new BakeCakeView();
         cakeMenu.displayIngredients();
     }
 

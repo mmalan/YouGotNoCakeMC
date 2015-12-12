@@ -6,15 +6,11 @@
 package view;
 
 import java.util.Scanner;
-import Control.IngredientControl;
 import Control.InventoryControl;
-import Model.Item;
 import yougotnocake.YouGotNoCake;
 import Model.Game;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -32,10 +28,10 @@ public class GiftsInventoryView {
                 + "\r\n----------------------------------------------------------"
                 + "\r\n| Item                   Quantity   Weight    Cost       |"
                 + "\r\n----------------------------------------------------------"
-                + "\r\n| Stuffed Unicorns -       " + InventoryControl.getItem(game.getGift(), "stuffed unicorn").getItemQuantity() + "         " + InventoryControl.getItem(game.getGift(), "stuffed unicorn").getItemWeight() + "       " + InventoryControl.getItem(game.getGift(), "stuffed unicorn").getItemCost() + "       |" //will display quantity
-                + "\r\n| BaseBall Bats -          " + InventoryControl.getItem(game.getGift(), "baseball bat").getItemQuantity() + "         " + InventoryControl.getItem(game.getGift(), "baseball bat").getItemWeight() + "       " + InventoryControl.getItem(game.getGift(), "baseball bat").getItemCost() + "       |" //will display quantity
-                + "\r\n| Whoopie Cushions -       " + InventoryControl.getItem(game.getGift(), "whoopie cushion").getItemQuantity() + "         " + InventoryControl.getItem(game.getGift(), "whoopie cushion").getItemWeight() + "       " + InventoryControl.getItem(game.getGift(), "whoopie cushion").getItemCost() + "       |" //will display quantity
-                + "\r\n| Pokiemon Cards -         " + InventoryControl.getItem(game.getGift(), "pokiemon cards").getItemQuantity() + "         " + InventoryControl.getItem(game.getGift(), "pokiemon cards").getItemWeight() + "       " + InventoryControl.getItem(game.getGift(), "pokiemon cards").getItemCost() + "       |" //will display quantity
+                + "\r\n| Stuffed Unicorns -       " + InventoryControl.getItem(game.getGifts(), "stuffed unicorn").getItemQuantity() + "         " + InventoryControl.getItem(game.getGifts(), "stuffed unicorn").getItemWeight() + "       " + InventoryControl.getItem(game.getGifts(), "stuffed unicorn").getItemCost() + "       |" //will display quantity
+                + "\r\n| BaseBall Bats -          " + InventoryControl.getItem(game.getGifts(), "baseball bat").getItemQuantity() + "         " + InventoryControl.getItem(game.getGifts(), "baseball bat").getItemWeight() + "       " + InventoryControl.getItem(game.getGifts(), "baseball bat").getItemCost() + "       |" //will display quantity
+                + "\r\n| Whoopie Cushions -       " + InventoryControl.getItem(game.getGifts(), "whoopie cushion").getItemQuantity() + "         " + InventoryControl.getItem(game.getGifts(), "whoopie cushion").getItemWeight() + "       " + InventoryControl.getItem(game.getGifts(), "whoopie cushion").getItemCost() + "       |" //will display quantity
+                + "\r\n| Pokemon Cards -          " + InventoryControl.getItem(game.getGifts(), "pokemon cards").getItemQuantity() + "         " + InventoryControl.getItem(game.getGifts(), "pokemon cards").getItemWeight() + "       " + InventoryControl.getItem(game.getGifts(), "pokemon cards").getItemCost() + "       |" //will display quantity
                 + "\r\n----------------------------------------------------------";
 
     }

@@ -12,24 +12,25 @@ import java.util.ArrayList;
  * @author Clayton
  */
 public class PartyGifts {
-
+    
     ArrayList<String> obj;
-
+  
     public PartyGifts() {
-
+        
         obj = new ArrayList();
-
+        
         obj.add("Stuffed Unicorn");
-        obj.add("Whoopie Cushion");
-        obj.add("Baseball Bat");
-        obj.add("Pokemon Cards");
-
+	obj.add("Whoopie Cushion");
+	obj.add("Baseball Bat");
+	obj.add("Pokemon Cards");
+        
         //String getList = obj.get(0);
+        
         //System.out.println("Current array list is:"+obj);
     }
-
+    
     public ArrayList<String> getObj() {
         return obj;
     }
-
+    
 }

@@ -7,15 +7,12 @@ package Model;
 
 import java.io.Serializable;
 import java.util.Objects;
-
 /**
  *
  * @author Clayton
  */
-public class Map implements Serializable {
-
-    //class instance vaiables
-
+public class Map implements Serializable{
+     //class instance vaiables
     private int noOfRows;
     private int noOfColumns;
     private Location[][] locations;
@@ -23,7 +20,7 @@ public class Map implements Serializable {
     private int currentColumn;
 
     public static Map createMap() {
-
+    
         String locations[][] = {
             {"Garage", "Manhole", "Library"},
             {"Back_Yard", "Treehouse", "Skate_Park"},
@@ -36,72 +33,65 @@ public class Map implements Serializable {
             {"Gas Station", "Museum", "X=Visited"}
         };
         int i, j;
-
-        for (i = 0; i < 9; i++) {
-            for (j = 0; j < 3; j++) {
-                System.out.print(locations[i][j] + " ");
-            }
+        
+        for (i=0; i < 9; i++) {
+            for (j=0; j < 3; j++)
+              System.out.print(locations[i][j] + " ");
             System.out.println();
         }
-
-        //create the map
-//        Map map = new Map(5, 5);
-        //create the scenes for the game
-        //Scene[] scenes = createScenes();
-        //assign scenes to locations
-        //GameControl.assignScenesToLocations(map, scenes);
+        
         return null;
     }
-
-    public Map() {
+    
+    public Map(){
         noOfRows = 0;
         noOfColumns = 0;
         locations = null;
         currentRow = 0;
         currentColumn = 0;
     }
-
-    public Map(int noOfRows, int noOfColumns) {
+    
+    public Map(int noOfRows, int noOfColumns){
         remakeMap(noOfRows, noOfColumns);
         currentRow = 0;
         currentColumn = 0;
     }
-
+    
     public void setCurrentPosition(int currentRow, int currentColumn) {
         this.currentRow = currentRow;
         this.currentColumn = currentColumn;
-        if (locations[currentRow][currentColumn] != null) {
+        if(locations[currentRow][currentColumn] != null){
             locations[currentRow][currentColumn].setVisited(true);
         }
     }
-
-    public Location findLocationByLetter(char l) {
-        for (int r = 0; r < noOfRows; r++) {
-            for (int c = 0; c < noOfColumns; c++) {
-                if (locations[r][c] != null) {
-                    if (locations[r][c].getLetter() == l) {
-                        return locations[r][c];
+    
+    public Location findLocationByLetter(char l){
+        for(int r = 0; r < noOfRows; r++){
+            for(int c =0; c < noOfColumns; c++){
+                if(locations[r][c] != null){
+                    if(locations[r][c].getLetter() == l){
+                       return locations[r][c]; 
                     }
                 }
             }
         }
-
+        
         return null;
     }
-
-    public Location findLocationByDescription(String d) {
-        for (int r = 0; r < noOfRows; r++) {
-            for (int c = 0; c < noOfColumns; c++) {
-                if (locations[r][c] != null) {
-                    if (locations[r][c].getDescription().matches(d)) {
-                        return locations[r][c];
+    
+    public Location findLocationByDescription(String d){
+        for(int r = 0; r < noOfRows; r++){
+            for(int c =0; c < noOfColumns; c++){
+                if(locations[r][c] != null){
+                    if(locations[r][c].getDescription().matches(d)){
+                       return locations[r][c]; 
                     }
                 }
             }
         }
-
+        
         return null;
-    }
+    } 
 
     public int getCurrentRow() {
         return currentRow;
@@ -118,25 +108,25 @@ public class Map implements Serializable {
     public void setCurrentColumn(int currentColumn) {
         setCurrentPosition(this.currentRow, currentColumn);
     }
-
-    public void remakeMap(int noOfRows, int noOfColumns) {
+    
+    public void remakeMap(int noOfRows, int noOfColumns){
         if (noOfRows < 1 || noOfColumns < 1) {
             System.out.println("The number of rows and columns must be > zero");
             return;
         }
         this.noOfRows = noOfRows;
         this.noOfColumns = noOfColumns;
-
+        
         // create 2-D array for location objects
         this.locations = new Location[noOfRows][noOfColumns];
     }
-
+           
     public int getNoOfRows() {
         return noOfRows;
     }
 
     public void setNoOfRows(int noOfRows) {
-        remakeMap(noOfRows, this.noOfColumns);
+       remakeMap(noOfRows, this.noOfColumns);
     }
 
     public int getNoOfColumns() {
@@ -146,16 +136,16 @@ public class Map implements Serializable {
     public void setNoOfColumns(int noOfColumns) {
         remakeMap(this.noOfRows, noOfColumns);
     }
-
-    public Location getLocationAt(int row, int column) {
+    
+    public Location getLocationAt(int row, int column){
         return locations[row][column];
     }
-
-    public void setLocationAt(Location l, int row, int column) {
+    
+    public void setLocationAt(Location l, int row, int column){
         locations[row][column] = l;
     }
-
-    public void addLocation(Location l) {
+    
+    public void addLocation(Location l){
         locations[l.getRow()][l.getColumn()] = l;
     }
 
@@ -189,5 +179,5 @@ public class Map implements Serializable {
         }
         return true;
     }
-
+    
 }

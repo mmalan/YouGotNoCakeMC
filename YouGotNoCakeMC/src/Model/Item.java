@@ -12,24 +12,24 @@ import java.util.Objects;
  *
  * @author Warehouse
  */
-public class Item implements Serializable {
-
+public class Item implements Serializable{
     private String itemName;
     private int itemQuantity;
     private double itemWeight;
     private double itemCost;
 
+
     public Item(String name, int quantity) {
         this.itemName = name;
         this.itemQuantity = quantity;
-
-    }
-
+           
+    }    
+    
     public Item(String name, int quantity, double weight, double cost) {
         this.itemName = name;
         this.itemQuantity = quantity;
         this.itemWeight = weight;
-        this.itemCost = cost;
+        this.itemCost = cost;        
     }
 
     public double getItemWeight() {
@@ -47,18 +47,15 @@ public class Item implements Serializable {
     public void setItemCost(double itemCost) {
         this.itemCost = itemCost;
     }
-
+    
     public String getItemName() {
         return itemName;
     }
-
+    
     public String getItemName(String newName) {
         return (this.itemName = newName);
     }
 
-//    public void setItemName(String itemName) {
-//        this.itemName = itemName;
-//    }
     public int getItemQuantity() {
         return this.itemQuantity;
     }
@@ -66,14 +63,14 @@ public class Item implements Serializable {
     public int setItemQuantity(int newQuantity) {
         return (this.itemQuantity = newQuantity);
     }
-
+    
     public void addToQuantity(int additionalAmount) {
         this.itemQuantity += additionalAmount;
     }
 
     @Override
     public String toString() {
-        return String.format("%s\t%d", this.itemName, this.itemQuantity);
+        return String.format("%s\t%d",this.itemName, this.itemQuantity);
     }
 
     @Override
@@ -100,6 +97,6 @@ public class Item implements Serializable {
             return false;
         }
         return true;
-    }
-
+    }      
+    
 }

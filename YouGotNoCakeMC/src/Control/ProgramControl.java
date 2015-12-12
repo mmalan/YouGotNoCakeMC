@@ -15,18 +15,18 @@ import yougotnocake.YouGotNoCake;
 public class ProgramControl {
 
     public static Player createPlayer(String name, int age) {
-
+        
         if (name == null) {
             return null;
         }
-
+        
         Player player = new Player();
-        player.setName(name);
+        player.setName(name);        
         player.setAge(age);
-
+        
         YouGotNoCake.setPlayer(player); //save the player
-
+        
         return player;
     }
-
+    
 }

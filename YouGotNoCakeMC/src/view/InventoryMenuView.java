@@ -5,9 +5,6 @@
  */
 package view;
 
-import java.util.Scanner;
-import view.View;
-
 /**
  *
  * @author Clayton
@@ -32,7 +29,7 @@ public class InventoryMenuView extends View {
     @Override
     public boolean doAction(Object obj) {
         try {
-
+        
             String value = (String) obj;
 
             value = value.toUpperCase();

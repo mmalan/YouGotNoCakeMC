@@ -5,9 +5,6 @@
  */
 package view;
 
-import java.util.Scanner;
-import view.View;
-
 /**
  *
  * @author Matt
@@ -15,7 +12,7 @@ import view.View;
 public class HelpMenuView extends View {
 
     public HelpMenuView() {
-        super("\n"
+            super("\n"
                 + "\n----------------------------------------------------------"
                 + "\n| Help Menu!                                             |"
                 + "\n----------------------------------------------------------"
@@ -27,42 +24,46 @@ public class HelpMenuView extends View {
     }
 
     @Override
-    public boolean doAction(Object obj) {
-
+    public boolean doAction(Object obj){
+        
         String value = (String) obj;
-
+        
         value = value.toUpperCase();
         char choice = value.charAt(0);
-
-        switch (choice) {
+       
+       switch (choice){
             case 'G': // Game Objective
-                this.gameObjective();
-                break;
+               this.gameObjective();
+               break;
             case 'H': // How to Move
-                this.moveInstructions();
-                break;
+               this.moveInstructions();
+               break;
             case 'C': // Check Inventory
-                this.checkInventoryInstructions();
-                break;
+               this.checkInventoryInstructions();
+               break;
             case 'E': // Exit Help
-                return true;
+               return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
-        }
-        return false;
+       }
+       return false;
+   }
+    
+    private void gameObjective() {
+        System.out.println("Find enough ingredients to bake a cake");
     }
 
-    private void gameObjective() {
-        System.out.println("*** gameObjective function called ***");
-    }
 
     private void moveInstructions() {
-        System.out.println("*** moveInstructions function called ***");
+        System.out.println("Using A-Y pick a location");
     }
 
+
     private void checkInventoryInstructions() {
-        System.out.println("*** checkInventoryInstructions function called ***");
+        System.out.println("You can check your inventory at any time by going to the check inventory menu and selecting ingredients, gifts or party supply menu options");
     }
 
 }
+    
+

@@ -18,9 +18,7 @@ import yougotnocake.YouGotNoCake;
 
 public class YouWinView {
 
-    private String menuString() {
-
-        Game game = YouGotNoCake.getCurrentGame();
+    private static String menuString() {
 
         return("\n"
                 + "\r\n-----------------------------------------------------------------------------------"
@@ -81,20 +79,20 @@ public class YouWinView {
 
     
 
-    public void displayYouWin() {
+    public static void displayYouWin() {
 
         String input;
         do {
             System.out.println(menuString()); // display the main menu
 
-            input = this.getCake(); // get the user's selection
+            input = getCake(); // get the user's selection
             //String answer = input.(yes); // get first character of string
 
-            this.saveCake(input); // do action based on selection
+            saveCake(input); // do action based on selection
         } while (!input.equals("back")); // an selection is not "Exit"
     }
 
-    public String getCake() {
+    public static String getCake() {
         boolean valid = false; //indicates if the name has been retrieved
         String entry = null;
         Scanner keyboard = new Scanner(System.in); //keyboard input stream
@@ -120,7 +118,7 @@ public class YouWinView {
         return entry; //return the selection
     }
 
-    public void saveCake(String input) {
+    public static void saveCake(String input) {
 
         if (input.equals("yes")) {
             saveCakeToFile();
@@ -129,7 +127,7 @@ public class YouWinView {
         }
     }
 
-    public void saveCakeToFile() {
+    public static void saveCakeToFile() {
         FileWriter outFile = null;
         String filelocation = "Cake.txt";
         try {

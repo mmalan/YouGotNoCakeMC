@@ -5,9 +5,7 @@
  */
 package view;
 
-import Control.GameControl;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import Control.GameControl; 
 import yougotnocake.YouGotNoCake;
 
 /**
@@ -15,9 +13,9 @@ import yougotnocake.YouGotNoCake;
  * @author Clayton H. & Matt M.
  */
 public class MainMenuView extends View {
-
+    
     public MainMenuView() {
-        super("\n"
+            super("\n"
                 + "\n----------------------------------------------------------"
                 + "\n| Main Menu                                              |"
                 + "\n----------------------------------------------------------"
@@ -28,45 +26,45 @@ public class MainMenuView extends View {
                 + "\nE - Exit Game"
                 + "\n----------------------------------------------------------");
     }
-
+    
     @Override
-    public boolean doAction(Object obj) {
-
+    public boolean doAction(Object obj){
+        
         String value = (String) obj;
-
+        
         value = value.toUpperCase();
         char choice = value.charAt(0);
-
-        switch (choice) {
+       
+       switch (choice){
             case 'N': // create and start a new game
-                this.startNewGame();
-                break;
+               this.startNewGame();
+               break;
             case 'G': // get and start an existing game
-                this.startExisitingGame();
-                break;
+               this.startExisitingGame();
+               break;
             case 'H': // help menu
-                this.displayHelpMenu();
-                break;
+               this.displayHelpMenu();
+               break;
             case 'S': // save game
-                this.saveGame();
-                break;
+               this.saveGame();
+               break;
             case 'E': // Exit the program
-                return true;
+               return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
-        }
-        return false;
-    }
+       }
+       return false;
+   }
 
     private void startNewGame() {
-//        create a new game
+       
         GameControl.createNewGame(YouGotNoCake.getPlayer(), YouGotNoCake.createMap());
-
+               
+        
 //        display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
-//        System.out.println("*** startNewGame function called ***");
     }
 
     private void startExisitingGame() {
@@ -75,16 +73,15 @@ public class MainMenuView extends View {
             GameMenuView gameMenu = new GameMenuView();
             gameMenu.display();
         } catch (Exception ex) {
-            System.out.println("Saved Game could not be loaded.");
+        System.out.println("Saved Game could not be loaded.");
         }
-
+              
     }
 
     private void displayHelpMenu() {
 //        display help menu
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
-//        System.out.println("*** displayHelpMenu function called ***");
     }
 
     private void saveGame() {
@@ -94,5 +91,5 @@ public class MainMenuView extends View {
             System.out.println("Game could not be saved.");
         }
     }
-
+                
 }

@@ -6,15 +6,11 @@
 package view;
 
 import java.util.Scanner;
-import Control.IngredientControl;
 import Control.InventoryControl;
-import Model.Item;
 import yougotnocake.YouGotNoCake;
 import Model.Game;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -32,7 +28,7 @@ public class PartyInventoryView {
                 + "\r\n----------------------------------------------------------"
                 + "\r\n| Item                   Quantity   Weight    Cost       |"
                 + "\r\n----------------------------------------------------------"
-                + "\r\n| Piniata -                " + InventoryControl.getItem(game.getPartySupplies(), "piniata").getItemQuantity() + "         " + InventoryControl.getItem(game.getPartySupplies(), "piniata").getItemWeight() + "       " + InventoryControl.getItem(game.getPartySupplies(), "piniata").getItemCost() + "       |" //will display quantity
+                + "\r\n| Pinata -                 " + InventoryControl.getItem(game.getPartySupplies(), "pinata").getItemQuantity() + "         " + InventoryControl.getItem(game.getPartySupplies(), "pinata").getItemWeight() + "       " + InventoryControl.getItem(game.getPartySupplies(), "pinata").getItemCost() + "       |" //will display quantity
                 + "\r\n| Party Hats -             " + InventoryControl.getItem(game.getPartySupplies(), "party hats").getItemQuantity() + "         " + InventoryControl.getItem(game.getPartySupplies(), "party hats").getItemWeight() + "       " + InventoryControl.getItem(game.getPartySupplies(), "party hats").getItemCost() + "       |" //will display quantity
                 + "\r\n| Plastic Forks -          " + InventoryControl.getItem(game.getPartySupplies(), "plastic forks").getItemQuantity() + "         " + InventoryControl.getItem(game.getPartySupplies(), "plastic forks").getItemWeight() + "       " + InventoryControl.getItem(game.getPartySupplies(), "plastic forks").getItemCost() + "       |" //will display quantity
                 + "\r\n| Ice Cream -              " + InventoryControl.getItem(game.getPartySupplies(), "ice cream").getItemQuantity() + "         " + InventoryControl.getItem(game.getPartySupplies(), "ice cream").getItemWeight() + "       " + InventoryControl.getItem(game.getPartySupplies(), "ice cream").getItemCost() + "       |" //will display quantity

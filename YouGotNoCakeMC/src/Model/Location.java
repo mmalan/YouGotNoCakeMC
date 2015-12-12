@@ -7,37 +7,57 @@ package Model;
 
 import java.io.Serializable;
 
+
 /**
  *
  * @author Clayton
  */
 public class Location implements Serializable {
-
     //class instance vaiables
-
     private boolean visited;
     private String description;
     private int row;
     private int column;
     private char letter;
+    private ItemList ingredients;
+    private ItemList gifts;
+    private ItemList partySupplies;
 
+    public ItemList getIngredients() {
+        return ingredients;
+    }
+
+    public ItemList getGifts() {
+        return gifts;
+    }
+
+    public ItemList getPartySupplies() {
+        return partySupplies;
+    }
+   
     public Location() {
         visited = false;
         description = "undefined";
         row = 0;
         column = 0;
         letter = '.';
-
+        ingredients = new ItemList("ingredients");
+        gifts = new ItemList("gifts");
+        partySupplies = new ItemList("party supplies");
+        
     }
-
+    
     public Location(boolean v, String d, char l, int r, int c) {
         visited = v;
         description = d;
         row = r;
         column = c;
         letter = l;
-
-    }
+        ingredients = new ItemList("ingredients");
+        gifts = new ItemList("gifts");
+        partySupplies = new ItemList("party supplies");
+        
+    }    
 
     public boolean getVisited() {
         return visited;
@@ -78,4 +98,5 @@ public class Location implements Serializable {
     public void setColumn(int column) {
         this.column = column;
     }
+    
 }
