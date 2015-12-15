@@ -16,10 +16,10 @@ public class HelpMenuView extends View {
                 + "\n----------------------------------------------------------"
                 + "\n| Help Menu!                                             |"
                 + "\n----------------------------------------------------------"
-                + "\nG - Game Objective"
-                + "\nH - How to Move"
-                + "\nC - Check Inventory"
-                + "\nE - Exit Help"
+                + "\n| G - Game Objective                                     |"
+                + "\n| H - How to Move                                        |"
+                + "\n| C - Check Inventory                                    |"
+                + "\n| E - Exit Help                                          |"
                 + "\n----------------------------------------------------------");
     }
 

@@ -17,10 +17,10 @@ public class GameMenuView extends View {
                 + "\n----------------------------------------------------------"
                 + "\n| Let's Get Cooking!                                     |"
                 + "\n----------------------------------------------------------"
-                + "\nC - Check Inventory"
-                + "\nL - Look at Map"
-                + "\nB - Bake Cake"
-                + "\nM - Main Menu"
+                + "\n| C - Check Inventory                                    |"
+                + "\n| L - Look at Map                                        |"
+                + "\n| B - Bake Cake                                          |"
+                + "\n| M - Main Menu                                          |"
                 + "\n----------------------------------------------------------");
     }
 

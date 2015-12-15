@@ -14,15 +14,15 @@ public class InventoryMenuView extends View {
     public InventoryMenuView() {
         super("\n"
                 + "\n----------------------------------------------------------"
-                + "\n| Inventory Menu!                                             |"
+                + "\n| Inventory Menu!                                        |"
                 + "\n----------------------------------------------------------"
-                + "\nI - View Ingredients"
-                + "\nS - Save Ingredients to File"
-                + "\nG - View Gifts"
-                + "\nF - Save Gifts to File"
-                + "\nP - View Party Supplies"
-                + "\nJ - Save Pariy Supplies to File"
-                + "\nE - Exit"
+                + "\n| I - View Ingredients                                   |"
+                + "\n| S --- Save Ingredients to File                         |"
+                + "\n| G - View Gifts                                         |"
+                + "\n| F --- Save Gifts to File                               |"
+                + "\n| P - View Party Supplies                                |"
+                + "\n| J --- Save Pariy Supplies to File                      |"
+                + "\n| E - Exit                                               |"
                 + "\n----------------------------------------------------------");
     }
 

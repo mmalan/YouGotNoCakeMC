@@ -6,13 +6,14 @@
 package Model;
 
 import Control.InventoryControl;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Clayton
  */
-public class ItemList {
+public class ItemList implements Serializable{
     
     private String name; 
     

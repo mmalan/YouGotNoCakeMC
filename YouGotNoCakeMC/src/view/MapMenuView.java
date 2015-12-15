@@ -32,19 +32,19 @@ public class MapMenuView {
             placeName = l.getDescription();
         }
         return "\n"
-                + "\n----------------------------------------------------------"
-                + "\n|Current Location is : " + placeName + "    !|"
-                + "\n----------------------------------------------------------"
-                + "\nA - Garage           | J - Manhole    | S - Library"
-                + "\nB - Back Yard        | K - Treehouse  | T - Skate Park"
-                + "\nC - Front Yard       | L - Outhouse   | U - Dark Alley"
-                + "\nD - Barbershop       | M - Playground | V - Dollar Theater"
-                + "\nE - Soviet Bakeshop  | N - School     | W - Motel 6"
-                + "\nF - Albertsons       | O - Florist    | X - Police Station"
-                + "\nG - Dr Root Dentist  | P - Grandmas   | Y - BYU-I Lab"
-                + "\nH - Creepy Guy House | Q - Friends    | Z - BACK-->" 
-                + "\nI - Gas Station      | R - Museum     | "
-                + "\n----------------------------------------------------------"
+                + "\n-------------------------------------------------------------"
+                + "\n| Current Location is : " + placeName + "                   !|"
+                + "\n-------------------------------------------------------------"
+                + "\n| A - Garage           | J - Manhole    | S - Library        |"
+                + "\n| B - Back Yard        | K - Treehouse  | T - Skate Park     |" 
+                + "\n| C - Front Yard       | L - Outhouse   | U - Dark Alley     |"
+                + "\n| D - Barbershop       | M - Playground | V - Dollar Theater |"
+                + "\n| E - Soviet Bakeshop  | N - School     | W - Motel 6        |"
+                + "\n| F - Albertsons       | O - Florist    | X - Police Station |"
+                + "\n| G - Dr Root Dentist  | P - Grandmas   | Y - BYU-I Lab      |"
+                + "\n| H - Creepy Guy House | Q - Friends    | Z - BACK-->        |" 
+                + "\n| I - Gas Station      | R - Museum     |                    |"
+                + "\n-------------------------------------------------------------"
             
                 + "\n ";
         

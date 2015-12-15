@@ -19,11 +19,11 @@ public class MainMenuView extends View {
                 + "\n----------------------------------------------------------"
                 + "\n| Main Menu                                              |"
                 + "\n----------------------------------------------------------"
-                + "\nN - New Game"
-                + "\nG - Start Saved Game"
-                + "\nH - Get help on how to play the game"
-                + "\nS - Save Game"
-                + "\nE - Exit Game"
+                + "\n| N - New Game                                           |"
+                + "\n| G - Start Saved Game                                   |"
+                + "\n| H - Get help on how to play the game                   |"
+                + "\n| S - Save Game                                          |"
+                + "\n| E - Exit Game                                          |"
                 + "\n----------------------------------------------------------");
     }
     
@@ -88,6 +88,7 @@ public class MainMenuView extends View {
         try {
             GameControl.saveGame();
         } catch (Exception ex) {
+            ex.printStackTrace();
             System.out.println("Game could not be saved.");
         }
     }

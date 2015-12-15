@@ -25,15 +25,18 @@ public class BakeCakeView {
         
         
          return "\r\n"
+                + "\r\n=========================================================="
+                + "\r\n| Cake Ingredients needed to make a cake...              |"
+                + "\r\n|      1 Sugar, 2 Butta, 3 Flour and 4 Eggs.             |" 
+                + "\r\n=========================================================="
+                + "\r\n| Your Inventory!                                        |"
                 + "\r\n----------------------------------------------------------"
-                + "\r\n| Cake Ingredients                                       |"
+                + "\r\n| Item    Quantity   Weight    Cost                      |"
                 + "\r\n----------------------------------------------------------"
-                + "\r\nItem    Quantity   Weight    Cost                                           "
-                + "\r\n----------------------------------------------------------"
-                + "\r\nSugar -     "  + InventoryControl.getItem(game.getIngredients(), "sugar").getItemQuantity() + "       " + InventoryControl.getItem(game.getIngredients(), "sugar").getItemWeight() + "      " + InventoryControl.getItem(game.getIngredients(), "sugar").getItemCost() + " " //will display quantity
-                + "\r\nEggs -      "  + InventoryControl.getItem(game.getIngredients(), "eggs").getItemQuantity() + "       " + InventoryControl.getItem(game.getIngredients(), "eggs").getItemWeight() + "     " + InventoryControl.getItem(game.getIngredients(), "eggs").getItemCost() + " " //will display quantity
-                + "\r\nButta -     "  + InventoryControl.getItem(game.getIngredients(), "butta").getItemQuantity() + "       " + InventoryControl.getItem(game.getIngredients(), "butta").getItemWeight() + "     " + InventoryControl.getItem(game.getIngredients(), "butta").getItemCost() + " " //will display quantity
-                + "\r\nFlour -     "  + InventoryControl.getItem(game.getIngredients(), "flour").getItemQuantity() + "       " + InventoryControl.getItem(game.getIngredients(), "flour").getItemWeight() + "      " + InventoryControl.getItem(game.getIngredients(), "flour").getItemCost() + " " //will display quantity
+                + "\r\n| Sugar -     "  + InventoryControl.getItem(game.getIngredients(), "sugar").getItemQuantity() + "       " + InventoryControl.getItem(game.getIngredients(), "sugar").getItemWeight() + "      " + InventoryControl.getItem(game.getIngredients(), "sugar").getItemCost() + "                       |" //will display quantity
+                + "\r\n| Eggs -      "  + InventoryControl.getItem(game.getIngredients(), "eggs").getItemQuantity() + "       " + InventoryControl.getItem(game.getIngredients(), "eggs").getItemWeight() + "     " + InventoryControl.getItem(game.getIngredients(), "eggs").getItemCost() + "                       |" //will display quantity
+                + "\r\n| Butta -     "  + InventoryControl.getItem(game.getIngredients(), "butta").getItemQuantity() + "       " + InventoryControl.getItem(game.getIngredients(), "butta").getItemWeight() + "     " + InventoryControl.getItem(game.getIngredients(), "butta").getItemCost() + "                       |" //will display quantity
+                + "\r\n| Flour -     "  + InventoryControl.getItem(game.getIngredients(), "flour").getItemQuantity() + "       " + InventoryControl.getItem(game.getIngredients(), "flour").getItemWeight() + "      " + InventoryControl.getItem(game.getIngredients(), "flour").getItemCost() + "                       |" //will display quantity
                 + "\r\n----------------------------------------------------------";
         
     }
